@@ -16,6 +16,7 @@ class Apartment extends Model
         'lat',
         'address',
         'img',
+        'visible',
         'price_per_night',
         'user_id'
     ];

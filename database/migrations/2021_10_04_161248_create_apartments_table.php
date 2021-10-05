@@ -24,7 +24,7 @@ class CreateApartmentsTable extends Migration
             $table->decimal('lat', 10, 7);
             $table->text('address');
             $table->text('img');
-            $table->boolean('visible')->default('0')->change();
+            $table->boolean('visible')->default(0);
             $table->double('price_per_night', 6, 2);
             $table->timestamps();
         });
