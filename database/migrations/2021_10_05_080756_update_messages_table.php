@@ -15,7 +15,7 @@ class UpdateMessagesTable extends Migration
     {
         Schema::table('messages', function (Blueprint $table) {
             $table->unsignedBigInteger('apartment_id');
-            $table->foreign('apartment_id')->references('id')->on('apartments');
+            $table->foreign('apartment_id')->references('id')->on('apartments'); //TO-do
         });
     }
 

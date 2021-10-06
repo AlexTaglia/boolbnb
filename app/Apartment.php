@@ -18,7 +18,12 @@ class Apartment extends Model
         'img',
         'visible',
         'price_per_night',
-        'user_id'
+        'user_id',
+        'method', 
+        'value', 
+        'status',
+        'started_on', 
+        'end_on'
     ];
 
     public function sponsor() {
