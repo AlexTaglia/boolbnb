@@ -29,6 +29,6 @@ class ApartmentsTableSeeder extends Seeder
             $apartmentObject->price_per_night = $faker->randomFloat(2, 20, 300);
             $apartmentObject->user_id = $faker->numberBetween(1,6);
             $apartmentObject->save();
-         }
+        }
     }
 }

@@ -16,10 +16,10 @@ class CreateApartmentServiceTable extends Migration
         Schema::create('apartment_service', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('apartment_id');
-            $table->foreign('apartment_id')->references('id')->on('apartments'); //TO-do
+            $table->foreign('apartment_id')->references('id')->on('apartments');
             
             $table->unsignedBigInteger('service_id');
-            $table->foreign('service_id')->references('id')->on('services'); //TO-do
+            $table->foreign('service_id')->references('id')->on('services');
         
             $table->timestamps();
         });

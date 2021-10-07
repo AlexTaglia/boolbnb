@@ -15,7 +15,7 @@ class UpdateApartmentsTable extends Migration
     {
         Schema::table('apartments', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users'); //TO-do
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
