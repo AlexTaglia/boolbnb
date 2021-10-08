@@ -22,10 +22,10 @@ class CreateApartmentSponsorTable extends Migration
             $table->dateTime('end_on');
 
             $table->unsignedBigInteger('sponsor_id');
-            $table->foreign('sponsor_id')->references('id')->on('sponsors');
+            $table->foreign('sponsor_id')->references('id')->on('sponsors')->onUpdate('cascade')->onDelete('cascade');
         
             $table->unsignedBigInteger('apartment_id');
-            $table->foreign('apartment_id')->references('id')->on('apartments');
+            $table->foreign('apartment_id')->references('id')->on('apartments')->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamps();
         });
