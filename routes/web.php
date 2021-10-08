@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', 'ApartmentController@index')->name('home');
 
 Route::resource('apartment', 'ApartmentController');
+
+

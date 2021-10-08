@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Apartment;
+use App\Message;
 use App\Service;
+use App\Sponsor;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -31,7 +33,10 @@ class ApartmentController extends Controller
     {
         $apartment = Apartment::all();
         $services = Service::all();
-        return view('apartment.create', compact('services', 'apartment'));
+        $sponsors = Sponsor::all();
+        return view('apartment.create', compact('services', 'apartment', 'sponsors'));
+        
+        //TODO Aggiungere Sponsor
     }
 
     /**
@@ -57,19 +62,24 @@ class ApartmentController extends Controller
         $apartment->long = $data['long']; 
         $apartment->img = $data['img']; 
         
+        /*
         if($data['visible'] === 'on'){
             $on=true;
         } else {
             $on=false;
         }
-
         $apartment->visible = $on;  
+        */
+        $apartment->visible = key_exists('visible', $data) ? true: false;
         $apartment->price_per_night = $data['price_per_night'];  
         $apartment->user_id = Auth::id();
 
         $apartment->save();
         if(array_key_exists('services', $data)) {
             $apartment->service()->sync($data['services']);
+        }
+        if(array_key_exists('sponsors', $data)) {
+            $apartment->sponsor()->sync($data['sponsors']);
         }
 
         return view('apartment.show', compact('apartment'));
@@ -97,9 +107,10 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     // ---------------------EDIT---
-    public function edit($id)
+    public function edit(Apartment $apartment, Service $service)
     {
-        //
+        $services = Service::all();
+        return view('apartment.edit', compact('apartment', 'services'));
     }
 
     /**
@@ -110,9 +121,14 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     // ---------------------UPDATE---
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
-        //
+
+        $data = $request->all();
+
+        $apartment->update($data);
+        return redirect()->route('apartment.show', $apartment->id);
+       
     }
 
     /**
@@ -122,8 +138,9 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     // ---------------------DESTROY---
-    public function destroy($id)
+    public function destroy(Apartment $apartment)
     {
-        //
+        $apartment->delete();
+        return redirect()->route('home');
     }
 }

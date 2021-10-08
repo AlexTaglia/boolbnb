@@ -15,46 +15,48 @@
             </div>
         @endif
 
-        <form class="mt-5" action="{{route('apartment.store')}}" method='post' enctype="multipart/form-data">
+        <form class="mt-5" action="{{route('apartment.update', $apartment)}}" method='post' enctype="multipart/form-data">
             @csrf
+            @method('PUT')
+
             <div class="form-group mb-4">
                 <label for="title">Titolo:</label>
-                <input class="form-control" type="text" name="title" id="title" maxlength="255">
+                <input class="form-control" type="text" name="title" id="title" maxlength="255" value="{{ $apartment->title }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="n_beedroom">Numero di stanze:</label>
-                <input class="form-control" type="number" name="n_beedroom" id="n_beedroom">
+                <input class="form-control" type="number" name="n_beedroom" id="n_beedroom" value="{{ $apartment->n_beedroom }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="n_beds">Numero di letti:</label>
-                <input class="form-control" type="number" name="n_beds" id="n_beds">
+                <input class="form-control" type="number" name="n_beds" id="n_beds" value="{{ $apartment->n_beds }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="n_bathrooms">Numero di bagni:</label>
-                <input class="form-control" type="number" name="n_bathrooms" id="n_bathrooms">
+                <input class="form-control" type="number" name="n_bathrooms" id="n_bathrooms" value="{{ $apartment->n_bathrooms }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="square_meters">Metri quadrati:</label>
-                <input class="form-control" type="number" name="square_meters" id="square_meters">
+                <input class="form-control" type="number" name="square_meters" id="square_meters" value="{{ $apartment->square_meters }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="address">Indirizzo</label>
-                <input class="form-control" type="text" name="address" id="address">
+                <input class="form-control" type="text" name="address" id="address" value="{{ $apartment->address }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="lat">Latitudine</label>
-                <input class="form-control" type="number" name="lat" id="lat">
+                <input class="form-control" type="number" name="lat" id="lat" value="{{ $apartment->lat }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="long">Longitudine</label>
-                <input class="form-control" type="number" name="long" id="long">
+                <input class="form-control" type="number" name="long" id="long" value="{{ $apartment->long }}">
             </div>
 
             <p>aggiungi i servizi:</p>
@@ -69,17 +71,17 @@
 
             <div class="form-group mb-4">
                 <label for="img">Immagine:</label>
-                <input class="form-control" type="text" name="img" id="img">
+                <input class="form-control" type="text" name="img" id="img" value="{{ $apartment->img }}">
             </div>
 
             <div class="form-check mb-4">
-                <input name="visible" type="checkbox" class="" id="visible">
-                <label class="form-check-label" for="visible" checked="true">Visible</label>
+                <input name="visible" type="checkbox" class="" id="visible"  value="{{ $apartment->visible }}">
+                <label class="form-check-label" for="visible">Visible</label>
             </div>
 
             <div class="form-group mb-4">
                 <label for="price_per_night">Prezzo</label>
-                <input class="form-control" type="number" name="price_per_night" id="price_per_night">
+                <input class="form-control" type="number" name="price_per_night" id="price_per_night" value="{{ $apartment->price_per_night }}">
             </div>
 
             <div class="form-group pb-4">
