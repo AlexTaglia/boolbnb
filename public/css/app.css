@@ -12332,7 +12332,121 @@ a.text-dark:focus {
   }
 }
 
-.apartment-container-img img {
-  border-radius: 50px;
+.cont-login {
+  margin-top: 5%;
+}
+
+.cont-login .card {
+  background: transparent;
+  color: white;
+  border: 1px solid #6d6d6d;
+}
+
+.cont-login .card .card-header {
+  border: 1px solid #6d6d6d;
+  text-align: center;
+}
+
+.cont-login .card .card-body .form-group {
+  justify-content: center;
+  margin-bottom: 0;
+  margin-top: 25px;
+}
+
+.cont-login .card .card-body .form-group .form-control {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #6d6d6d;
+  background: transparent;
+  font-size: 15px;
+  color: white;
+}
+
+.cont-login .card .card-body .form-group .form-control:focus ~ label,
+.cont-login .card .card-body .form-group .form-control:valid ~ label {
+  top: -30px;
+  font-size: 14px;
+}
+
+.cont-login .card .card-body .form-group .lable-control {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 7px 10px;
+  cursor: text;
+  transition: 0.2s;
+  margin-left: 15px;
+}
+
+.cont-register {
+  margin-top: 5%;
+}
+
+.cont-register .card {
+  background: transparent;
+  color: white;
+  border: 1px solid #6d6d6d;
+}
+
+.cont-register .card .card-header {
+  border: 1px solid #6d6d6d;
+  text-align: center;
+}
+
+.cont-register .card .card-body .form-group {
+  justify-content: center;
+  margin-bottom: 0;
+  margin-top: 25px;
+}
+
+.cont-register .card .card-body .form-group .form-control {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #6d6d6d;
+  background: transparent;
+  font-size: 15px;
+  color: white;
+}
+
+.cont-register .card .card-body .form-group .form-control:focus ~ label,
+.cont-register .card .card-body .form-group .form-control:valid ~ label {
+  top: -30px;
+  font-size: 14px;
+}
+
+.cont-register .card .card-body .form-group .lable-control {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 7px 10px;
+  cursor: text;
+  transition: 0.2s;
+  margin-left: 15px;
+}
+
+.cont-register .card .card-body .form-group button {
+  width: 100%;
+}
+
+#app {
+  height: 100vh;
+  background-image: url(/images/notte.jpg?ce8e30c3c1c6422bdc560c4037858e30);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#app .navbar {
+  background: #0000008f;
+}
+
+#app .navbar .collapse .navbar-nav .img-user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 

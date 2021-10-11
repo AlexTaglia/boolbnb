@@ -1,0 +1,34 @@
+#bg-create{
+
+    form{
+
+        .form-group{
+            position: relative;
+
+            .form-control{
+                 width: 100%;
+                 padding: 10px;
+                 outline: 0;
+                 border: 1px solid rgb(22, 22, 22);
+                 background:transparent;
+                 font-size: 15px;
+            }
+            .form-control:focus~label,
+            .form-control:valid~label{
+                top: -30px;
+                font-size: 14px;
+            }
+            .lable-control{
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding: 7px 10px;
+                color: black;
+                cursor: text;
+                transition: 0.2s;
+            }
+        }
+
+    }
+}

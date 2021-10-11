@@ -8,8 +8,35 @@
 @import '~bootstrap/scss/bootstrap';
 
 
+@import '~bootstrap-icons/font/bootstrap-icons.css';
 
+@import 'login';
+@import 'register';
 @import '_show.scss';
 
+#app{
+    height: 100vh;
+    background-image: url(../../public/image/notte.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-@import '~bootstrap-icons/font/bootstrap-icons.css';
+    .navbar{
+        background:#0000008f;
+
+        .collapse{
+    
+            .navbar-nav{
+    
+                .img-user{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+               
+            }
+    
+        }
+    }
+    
+}
