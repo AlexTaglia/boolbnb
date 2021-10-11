@@ -38,22 +38,15 @@ class SponsorTableSeeder extends Seeder
             $sponsorObject->save();
             
         }
-
         for ($i = 0; $i < 20; $i++){
             $apartmentId = rand(1,20);
             $sponsorId = rand(1,3);
             $apartment = Apartment::find($apartmentId);
-            // $sponsor = Sponsor::find($sponsorId);
             $apartment->sponsor()->attach($sponsorId,['method' => $faker->creditCardType(), 
             'currency' => '€',
             'status' => $faker->numberBetween(0,1),
             'started_on' => $faker->dateTime(),
-            'end_on' => $faker->dateTime]);
-            // 'sponsor_id' => $faker->numberBetween(1,3),
-            // 'sponsor_id' => $sponsor->id,
-            // 'apartment_id' => $faker->numberBetween(1,30)]);
-            // 'apartment_id' => $apartment->id]);
+            'end_on' => $faker->dateTime]); 
         } 
-        
     }
 }

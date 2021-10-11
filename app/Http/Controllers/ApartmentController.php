@@ -19,7 +19,7 @@ class ApartmentController extends Controller
     // ---------------------INDEX---
     public function index()
     {
-        $allApartments = Apartment::all();
+        $allApartments = Apartment::paginate(12);
         return view('home', compact('allApartments'));
     }
 
