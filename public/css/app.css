@@ -12332,3 +12332,7 @@ a.text-dark:focus {
   }
 }
 
+.apartment-container-img img {
+  border-radius: 50px;
+}
+
