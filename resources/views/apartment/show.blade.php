@@ -14,7 +14,7 @@
                     </div>
 
                     <div class="card-body">
-                        <img class="img-fluid" src=" {{ $apartment->img}}" alt="{{ $apartment->title}}">
+                        <img class="img-fluid" src=" {{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
                         <div>
                             N.di stanze: {{ $apartment->n_beedroom}}
                         </div>

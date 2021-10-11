@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
 
 
-        @foreach ($allApartments as $apartment)
+        @foreach ($user->apartment as $apartment)
             <div class="col-4">
                 <div class="card mb-3">
                     <div class="card-header">
@@ -20,7 +20,7 @@
                         {{ $apartment->square_meters}}
                         {{ $apartment->adress}}
                         <a href="{{ route('apartment.show', $apartment)}}">
-                            <img class="img-fluid" src=" {{ $apartment->img}}" alt="{{ $apartment->title}}">
+                            <img class="img-fluid" src=" {{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
                         </a>
                         {{ $apartment->price_per_night}}      
                     </div>

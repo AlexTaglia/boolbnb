@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Apartment;
-use App\Message;
+use App\User;
 use App\Service;
 use App\Sponsor;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
 {
@@ -19,8 +20,11 @@ class ApartmentController extends Controller
     // ---------------------INDEX---
     public function index()
     {
-        $allApartments = Apartment::all();
-        return view('home', compact('allApartments'));
+        $user = User::find(auth()->user()->id);
+        return view('home', compact('user'));
+                
+        // $allApartments = Apartment::all();
+        // return view('home', compact('allApartments'));
     }
 
     /**
@@ -48,6 +52,20 @@ class ApartmentController extends Controller
     // ---------------------STORE---
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'required',
+            'n_beedroom' => 'required',
+            'n_beds' => 'required',
+            'n_bathrooms' => 'required',
+            'square_meters' => 'required',
+            'address' => 'required',
+            'lat' => 'required',
+            'long' => 'required',
+            'img' => 'required', 'image | mimes:jpeg,jpg,png',
+            'price_per_night' => 'required',
+        ]);
+
         // dd($request);
         $data = $request->all();
         $apartment = new Apartment;
@@ -60,7 +78,8 @@ class ApartmentController extends Controller
         $apartment->address = $data['address'];  
         $apartment->lat = $data['lat'];  
         $apartment->long = $data['long']; 
-        $apartment->img = $data['img']; 
+        // $apartment->img = $data['img'];
+        $apartment->img = Storage::put('uploads', $data['img']); 
         
         /*
         if($data['visible'] === 'on'){
@@ -123,6 +142,18 @@ class ApartmentController extends Controller
     // ---------------------UPDATE---
     public function update(Request $request, Apartment $apartment)
     {
+        $request->validate([
+            'title' => 'required',
+            'n_beedroom' => 'required',
+            'n_beds' => 'required',
+            'n_bathrooms' => 'required',
+            'square_meters' => 'required',
+            'address' => 'required',
+            'lat' => 'required',
+            'long' => 'required',
+            'img' => 'required', 'image | mimes:jpeg,jpg,png',
+            'price_per_night' => 'required',
+        ]);
 
         $data = $request->all();
 
