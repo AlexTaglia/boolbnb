@@ -49,12 +49,12 @@
 
             <div class="form-group mb-4">
                 <label for="lat">Latitudine</label>
-                <input class="form-control" type="number" name="lat" id="lat">
+                <input class="form-control" type="text" name="lat" id="lat">
             </div>
 
             <div class="form-group mb-4">
                 <label for="long">Longitudine</label>
-                <input class="form-control" type="number" name="long" id="long">
+                <input class="form-control" type="text" name="long" id="long">
             </div>
 
             <p>aggiungi i servizi:</p>
@@ -69,7 +69,7 @@
 
             <div class="form-group mb-4">
                 <label for="img">Immagine:</label>
-                <input class="form-control" type="text" name="img" id="img">
+                <input class="form-control-file" type="file" name="img" id="img">
             </div>
 
             <div class="form-check mb-4">

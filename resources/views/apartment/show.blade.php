@@ -6,18 +6,10 @@
     <div class="row justify-content-center">
         <div class="col">
            
-                {{-- <div class="card"> --}}
-                    {{-- <div class="card-header"> --}}
 
-                        <div class="title-apartment mb-4">
-                            <h2>{{ $apartment->title}}</h2>
-                        </div>
 
-                    {{-- </div> --}}
-
-                    {{-- <div class="card-body"> --}}
                         <div class=" d-flex justify-content-center apartment-container-img">
-                             <img class="img-fluid mt-2 mb-5" src=" {{ $apartment->img}}" alt="{{ $apartment->title}}">
+                             <img class="img-fluid mt-2 mb-5" src=" {{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
                          </div>
 
                              <hr>
