@@ -1,0 +1,47 @@
+.cont-login{
+    margin-top: 5%;
+
+    .card{
+        background:transparent;
+        color: white;
+        border: 1px solid rgb(109, 109, 109);
+
+        .card-header{
+            border: 1px solid rgb(109, 109, 109);
+            text-align: center;
+        }
+        .card-body{
+
+            .form-group{
+                justify-content: center;
+                margin-bottom: 0;
+                margin-top: 25px;
+
+                .form-control{
+                    width: 100%;
+                    padding: 10px;
+                    outline: 0;
+                    border: 1px solid rgb(109, 109, 109);
+                    background:transparent;
+                    font-size: 15px;
+                    color: white;
+                }
+                .form-control:focus~label,
+                .form-control:valid~label{
+                    top: -30px;
+                    font-size: 14px;
+                }
+                .lable-control{
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    padding: 7px 10px;
+                    cursor: text;
+                    transition: 0.2s;
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}
