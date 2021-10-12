@@ -42,7 +42,7 @@
                         <div class="form-group row">
                             <div class="col-md-8">
                                 <input id="img" type="file" class="form-control @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}" required autocomplete="img" autofocus>
-                                <label for="img" class=" col-form-label lable-control text-md-right">{{ __('Picture') }}</label>
+                                <label for="img" class=" col-form-label lable-control text-md-right"></label>
                                 @error('img')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

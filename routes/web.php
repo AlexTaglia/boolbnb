@@ -19,7 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/index', 'ApartmentController@index')->name('index')->middleware('auth');
+Route::get('/home', 'HomeController@index');
+
 
 Route::resource('apartment', 'ApartmentController')->middleware('auth');
 

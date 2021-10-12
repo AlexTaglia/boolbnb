@@ -4,7 +4,7 @@
 // Variables
 @import 'variables';
 
-@import 'home';
+@import '_home';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -14,12 +14,20 @@
 
 @import 'login';
 @import 'register';
-@import '_show.scss';
+
+
 @import 'index';
 
+
+
+@import 'show';
+@import 'create';
+
 #app{
-    height: 100vh;
-    // background-image: url(../../public/image/notte.jpg);
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../../public/image/notte.jpg);
+
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -43,3 +51,6 @@
     }
     
 }
+
+
+
