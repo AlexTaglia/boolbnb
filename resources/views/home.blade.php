@@ -115,9 +115,7 @@
                 </div>
             </div>
         @endforeach
-        <div>
-            {!! $allApartments->links()!!}
-        </div>
+        
     </div>
 
 </div>
@@ -133,7 +131,5 @@
         display: flex;
         justify-content: center;
     }
-    .container{
-       
-    }
+   
 </style>

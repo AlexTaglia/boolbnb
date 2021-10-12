@@ -1,17 +1,22 @@
 #bg-create{
 
     form{
-
+        color: white;
         .form-group{
+        
             position: relative;
+            color: white;
+            button{
+                width: 100%;
+            }
 
             .form-control{
-                 width: 100%;
-                 padding: 10px;
-                 outline: 0;
-                 border: 1px solid rgb(22, 22, 22);
-                 background:transparent;
-                 font-size: 15px;
+                color: white;
+                width: 100%;
+                padding: 10px;
+                outline: 0;
+                border: 1px solid rgb(109, 109, 109);                background:transparent;
+                font-size: 15px;
             }
             .form-control:focus~label,
             .form-control:valid~label{
@@ -24,7 +29,6 @@
                 left: 0;
                 top: 0;
                 padding: 7px 10px;
-                color: black;
                 cursor: text;
                 transition: 0.2s;
             }
