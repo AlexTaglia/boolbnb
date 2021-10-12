@@ -21,8 +21,8 @@ class ApartmentController extends Controller
     public function index()
     {
 
-        $user = User::find(auth()->user()->id->paginate(12));
-        return view('home', compact('user'));
+        // $user = User::find(auth()->user()->id);
+        // return view('home', compact('user'));
                 
         // $allApartments = Apartment::all();
         // return view('home', compact('allApartments'));

@@ -80,6 +80,13 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <main class="py-4">
+            @yield('prova-text')
+        </main>
+        <main class="py-4">
+            @yield('ciccio')
+        </main>
     </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Apartment;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+    
+         $allApartments = Apartment::paginate(12);
+        
+        return view('home', compact('allApartments'));
+       
+
     }
 }
