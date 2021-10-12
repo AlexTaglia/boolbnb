@@ -21,6 +21,8 @@
               
               Cerca
             </button>
+
+            <filter-component :apartments = "{{ $apartments }}"></filter-component>
           </div>
        </form>
 
