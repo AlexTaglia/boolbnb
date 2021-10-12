@@ -19,8 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'ApartmentController@index')->name('home');
+Route::get('/index', 'ApartmentController@index')->name('index')->middleware('auth');
 
-Route::resource('apartment', 'ApartmentController');
+Route::resource('apartment', 'ApartmentController')->middleware('auth');
 
 

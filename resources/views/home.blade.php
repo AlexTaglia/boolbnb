@@ -40,7 +40,7 @@
       <button type="button" class="btn btn-outline-danger">Accedi</button>
     </div>
   </nav>
-<div class="container">
+<div class="container home">
     <div class="row justify-content-center">
 
 
@@ -115,9 +115,7 @@
                 </div>
             </div>
         @endforeach
-        <div>
-            {!! $allApartments->links()!!}
-        </div>
+
     </div>
 
 </div>
@@ -131,9 +129,6 @@
     }
     .buttons{
         display: flex;
-        justify-content: center;
-    }
-    .container{
-       
+        justify-content: center;   
     }
 </style>

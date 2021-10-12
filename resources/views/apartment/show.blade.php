@@ -3,6 +3,12 @@
 @section('content')
 <div class="container">
 
+    <a href="{{ route('apartment.index') }}">
+      <button class="btn">
+        <i class="bi bi-arrow-left"></i>
+      </button>
+    </a>
+
     <div class="row justify-content-center">
         <div class="col">
            
@@ -46,9 +52,9 @@
                             <hr>
                                               
                         
-                        
+                        <h3>Servizi</h3>
                         <div class='row'>
-                            <ul> <h3>Servizi</h3>
+                            <ul> 
                                 @foreach ($apartment->service as $service)
                                 <li>
                                     {{$service->name}}
@@ -59,15 +65,12 @@
 
                         <hr>
 
+                        <h3>Descrizione</h3>
                         <div class='row'>
-                            <ul> <h3>Messaggi</h3>
-                                @foreach($apartment->message as $message)
-                                <li>
-                                    {{$message->text}}
-                                </li>
-                                @endforeach
-                            </ul>   
-                        </div>     
+                            <p>{{ $apartment->description}}</p>
+                        </div>   
+                        
+                        <hr>
                         <div>
                             <ul> Sponsor:
                                 @foreach($apartment->sponsor as $sponsor)

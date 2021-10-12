@@ -84,6 +84,11 @@
                 <input class="form-control" type="number" name="price_per_night" id="price_per_night" value="{{ $apartment->price_per_night }}">
             </div>
 
+            <div class="form-group mb-4">
+                <label for="description">Descrizione</label>
+                <input class="form-control" rows="3" type="text" name="description" id="description" value="{{ $apartment->description }}">
+            </div>
+
             <div class="form-group pb-4">
                 <input type="submit" value="Salva">
             </div>

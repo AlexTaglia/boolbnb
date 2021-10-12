@@ -15,10 +15,11 @@
 @import 'login';
 @import 'register';
 @import '_show.scss';
+@import 'index';
 
 #app{
     height: 100vh;
-    background-image: url(../../public/image/notte.jpg);
+    // background-image: url(../../public/image/notte.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

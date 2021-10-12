@@ -19,42 +19,42 @@
             @csrf
             <div class="form-group mb-4">
                 <label for="title">Titolo:</label>
-                <input class="form-control" type="text" name="title" id="title" maxlength="255">
+                <input class="form-control" type="text" name="title" id="title" maxlength="255" value="{{ old('title') }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="n_beedroom">Numero di stanze:</label>
-                <input class="form-control" type="number" name="n_beedroom" id="n_beedroom">
+                <input class="form-control" type="number" name="n_beedroom" id="n_beedroom" value="{{ old('n_beedroom') }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="n_beds">Numero di letti:</label>
-                <input class="form-control" type="number" name="n_beds" id="n_beds">
+                <input class="form-control" type="number" name="n_beds" id="n_beds" value="{{ old('n_beds') }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="n_bathrooms">Numero di bagni:</label>
-                <input class="form-control" type="number" name="n_bathrooms" id="n_bathrooms">
+                <input class="form-control" type="number" name="n_bathrooms" id="n_bathrooms" value="{{ old('n_bathrooms') }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="square_meters">Metri quadrati:</label>
-                <input class="form-control" type="number" name="square_meters" id="square_meters">
+                <input class="form-control" type="number" name="square_meters" id="square_meters" value="{{ old('square_meters') }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="address">Indirizzo</label>
-                <input class="form-control" type="text" name="address" id="address">
+                <input class="form-control" type="text" name="address" id="address" value="{{ old('address') }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="lat">Latitudine</label>
-                <input class="form-control" type="text" name="lat" id="lat">
+                <input class="form-control" type="text" name="lat" id="lat" value="{{ old('lat') }}">
             </div>
 
             <div class="form-group mb-4">
                 <label for="long">Longitudine</label>
-                <input class="form-control" type="text" name="long" id="long">
+                <input class="form-control" type="text" name="long" id="long" value="{{ old('long') }}">
             </div>
 
             <p>aggiungi i servizi:</p>
@@ -79,7 +79,12 @@
 
             <div class="form-group mb-4">
                 <label for="price_per_night">Prezzo</label>
-                <input class="form-control" type="number" name="price_per_night" id="price_per_night">
+                <input class="form-control" type="number" name="price_per_night" id="price_per_night" value="{{ old('price_per_night') }}">
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="description">Descrizione</label>
+                <input class="form-control" type="text" name="description" id="description" value="{{ old('description') }}">
             </div>
 
             <div class="form-group pb-4">
