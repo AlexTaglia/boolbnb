@@ -170,7 +170,7 @@
                           </strong>
                           
                       </h5>
-                      
+                    
                   </div>
 
                   <div class="buttons">
@@ -195,6 +195,7 @@
       </div>
   </div>
 
+
 </div>
 @endsection
 <style>
@@ -209,6 +210,9 @@
         display: flex;
         justify-content: center;
     }
+
+   
+
     .form-container{
     display: flex;
     background-color:#f5f5f5;
@@ -285,5 +289,6 @@ width:200px;
     flex-direction: row;
     color:black;
 }
+
 
 </style>
