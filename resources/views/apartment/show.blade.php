@@ -3,7 +3,14 @@
 @section('content')
 <div class="container bg-show">
 
+    <a href="{{ route('apartment.index') }}">
+      <button class="btn">
+        <i class="bi bi-arrow-left"></i>
+      </button>
+    </a>
+
     <div class="row justify-content-center">
+
         <div class="col-md-10">
 
             <h1 class="p-2">{{ $apartment->title}}</h1>
@@ -11,6 +18,22 @@
             <div class=" d-flex justify-content-center apartment-container-img">
                 <img src="{{ $apartment->img }}" alt="{{ $apartment->title}}">
             </div>
+            
+            <h3>Descrizione</h3>
+                        <div class='row'>
+                            <p>{{ $apartment->description}}</p>
+                        </div>   
+                        
+                        <hr>
+                        <div>
+                            <ul> Sponsor:
+                                @foreach($apartment->sponsor as $sponsor)
+                                <li>
+                                    {{$sponsor->name}}
+                                </li>
+                                @endforeach
+                            </ul>   
+                        </div> 
             
             <div class="row cont-description">
                 <h3  class="p-4 col-md-12">Descrizione Appartamento</h3>
@@ -54,6 +77,7 @@
                     </ul>
                 </div>
             </div>   
+
         </div>
     </div>
 </div>

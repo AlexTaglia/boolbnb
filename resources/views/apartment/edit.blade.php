@@ -68,6 +68,7 @@
                             <label>{{$service->name}}</label>
                         </div>
                     @endforeach
+
                 </div>
     
                 <div class="form-group mb-4">
@@ -84,6 +85,11 @@
                     <input class="form-control" type="number" name="price_per_night" id="price_per_night" value="{{ $apartment->price_per_night }}" required >
                     <label class="lable-control" for="price_per_night">Prezzo</label>
                 </div>
+                
+                <div class="form-group mb-4">
+                    <label for="description">Descrizione</label>
+                    <input class="form-control" rows="3" type="text" name="description" id="description" value="{{ $apartment->description }}">
+                </div>
     
                 <div class="form-group pb-4">
                     <button type="submit" value="Salva" class="btn btn-outline-primary">
@@ -92,6 +98,7 @@
                 </div>
             </form>
         </div>
+
     </div>
 </div>
 

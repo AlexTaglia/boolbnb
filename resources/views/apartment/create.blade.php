@@ -2,6 +2,7 @@
 
 
 @section('content')
+
 <div class="container" id="bg-create">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -73,6 +74,11 @@
                         <input class="form-control" type="number" name="price_per_night" id="price_per_night" required autocomplete="price_per_night" autofocus>
                         <label class="lable-control" for="price_per_night">Prezzo</label>
                     </div>
+                    
+                    <div class="form-group mb-4">
+                        <label for="description">Descrizione</label>
+                        <input class="form-control" type="text" name="description" id="description" value="{{ old('description') }}">
+                    </div>
         
                     <div class="form-group pb-4">
                         <button type="submit" value="Salva" class="btn btn-outline-primary">
@@ -80,6 +86,7 @@
                         </button>      
                     </div>       
                 </form>
+
             </div>
         </div>
     </div>

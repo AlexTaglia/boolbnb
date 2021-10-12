@@ -23,7 +23,7 @@ class ApartmentController extends Controller
 
 
         $user = User::find(auth()->user()->id);
-        return view('home', compact('user'));
+        return view('apartment.index', compact('user'));
 
                 
         // $allApartments = Apartment::all();
@@ -66,6 +66,7 @@ class ApartmentController extends Controller
             'address' => 'required',
             'lat' => 'required',
             'long' => 'required',
+            'description' => 'required',
             'img' => 'required', 'image | mimes:jpeg,jpg,png',
             'price_per_night' => 'required',
         ]);
@@ -82,6 +83,8 @@ class ApartmentController extends Controller
         $apartment->address = $data['address'];  
         $apartment->lat = $data['lat'];  
         $apartment->long = $data['long']; 
+        $apartment->description = $data['description']; 
+
         // $apartment->img = $data['img'];
         $apartment->img = Storage::put('uploads', $data['img']); 
         
@@ -155,6 +158,7 @@ class ApartmentController extends Controller
             'address' => 'required',
             'lat' => 'required',
             'long' => 'required',
+            'description' => 'required',
             'img' => 'required', 'image | mimes:jpeg,jpg,png',
             'price_per_night' => 'required',
         ]);
@@ -176,6 +180,6 @@ class ApartmentController extends Controller
     public function destroy(Apartment $apartment)
     {
         $apartment->delete();
-        return redirect()->route('home');
+        return redirect()->route('apartement.index');
     }
 }

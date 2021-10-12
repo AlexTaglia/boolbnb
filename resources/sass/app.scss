@@ -14,6 +14,12 @@
 
 @import 'login';
 @import 'register';
+
+
+@import 'index';
+
+
+
 @import 'show';
 @import 'create';
 
@@ -21,6 +27,7 @@
     width: 100%;
     min-height: 100vh;
     background-image: url(../../public/image/notte.jpg);
+
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

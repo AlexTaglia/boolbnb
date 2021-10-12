@@ -1,0 +1,32 @@
+.container.index{
+    .table{
+        // border-collapse: separate;
+        border-radius: 20px;
+        box-shadow: 5px 5px 10px $lightGray;
+        overflow: hidden;
+        
+        thead{
+            vertical-align: top;
+            background-color: $lightGray;
+            th{
+                vertical-align: top;
+                border: none;
+            }
+        }
+
+        img{
+            width: 150px;
+            border-radius: 4px;
+        }
+    }
+
+    button{
+        &:hover{
+            color: $blue;
+        }
+    }
+
+    .btn{
+     padding: 0 6px;   
+    }
+}
