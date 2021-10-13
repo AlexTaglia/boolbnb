@@ -12332,6 +12332,15 @@ a.text-dark:focus {
   }
 }
 
+footer {
+  height: 100px;
+  background-color: #EBEBEB;
+}
+
+footer .footer-container {
+  padding-top: 20px;
+}
+
 .cont-login {
   margin-top: 5%;
 }
@@ -12432,12 +12441,94 @@ a.text-dark:focus {
   width: 100%;
 }
 
-#app {
-  height: 100vh;
-  background-image: url(/images/notte.jpg?ce8e30c3c1c6422bdc560c4037858e30);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.container.index .table {
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #dee2e6;
+  overflow: hidden;
+}
+
+.container.index .table thead {
+  vertical-align: top;
+  background-color: #dee2e6;
+}
+
+.container.index .table thead th {
+  vertical-align: top;
+  border: none;
+}
+
+.container.index .table img {
+  width: 150px;
+  border-radius: 4px;
+}
+
+.container.index button:hover {
+  color: #3490dc;
+}
+
+.container.index .btn {
+  padding: 0 6px;
+}
+
+.bg-show {
+  color: white;
+}
+
+.bg-show .apartment-container-img img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.bg-show .cont-description ul li {
+  list-style: none;
+}
+
+.bg-show .cont-description ul li i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.bg-show .apartment-container-img img {
+  border-radius: 50px;
+}
+
+#bg-create form {
+  color: white;
+}
+
+#bg-create form .form-group {
+  position: relative;
+  color: white;
+}
+
+#bg-create form .form-group button {
+  width: 100%;
+}
+
+#bg-create form .form-group .form-control {
+  color: white;
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid #6d6d6d;
+  background: transparent;
+  font-size: 15px;
+}
+
+#bg-create form .form-group .form-control:focus ~ label,
+#bg-create form .form-group .form-control:valid ~ label {
+  top: -30px;
+  font-size: 14px;
+}
+
+#bg-create form .form-group .lable-control {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 7px 10px;
+  cursor: text;
+  transition: 0.2s;
 }
 
 #app .navbar {

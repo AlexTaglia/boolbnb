@@ -16,7 +16,9 @@
             <h1 class="p-2">{{ $apartment->title}}</h1>
 
             <div class=" d-flex justify-content-center apartment-container-img">
+
                 <img src="{{$apartment->img}}" alt="{{ $apartment->title}}">
+
             </div>
             
             <h3>Descrizione</h3>
