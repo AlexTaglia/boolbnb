@@ -152,6 +152,7 @@
 
 </div>
 @endsection
+
 <style>
 
  
@@ -304,4 +305,5 @@ align-items:center;
   padding: 15px;
 }
 </style>
+
 

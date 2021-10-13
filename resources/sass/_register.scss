@@ -3,7 +3,6 @@
 
     .card{
         background:transparent;
-        color: white;
         border: 1px solid rgb(109, 109, 109);
 
         .card-header{
@@ -25,8 +24,7 @@
                     border: 1px solid rgb(109, 109, 109);
                     background:transparent;
                     font-size: 15px;
-                    color: white;
-                }
+                            }
                 .form-control:focus~label,
                 .form-control:valid~label{
                     top: -30px;

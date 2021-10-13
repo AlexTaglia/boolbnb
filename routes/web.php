@@ -26,4 +26,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('apartment', 'ApartmentController')->middleware('auth');
 
+Route::get('/home/message', 'MessageController@index');
+
+Route::resource('apartment.message', 'MessageController');
 

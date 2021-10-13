@@ -16,15 +16,9 @@
             <h1 class="p-2">{{ $apartment->title}}</h1>
 
             <div class=" d-flex justify-content-center apartment-container-img">
-                <div class="row img-map">
-                    <div class="col-6">
-                        <img class="img-fluid" src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
-                    </div>
-             
-                    <div class="col-6">
-                        <map-component :apartment="{{ $apartment }}"></map-component>
-                    </div>
-                </div>
+
+                <img src="{{$apartment->img}}" alt="{{ $apartment->title}}">
+
             </div>
             
             <h3>Descrizione</h3>
@@ -85,8 +79,18 @@
                     </ul>
                 </div>
             </div>   
-
+            <div>
+                @foreach ($apartment->message as $messag )
+                <div>
+                        <div> {{$messag->sender_name}}</div>
+                        <div> {{$messag->emai}}
+                        <p> {{$messag->text}}</p>
+                        <hr>
+                    </div>
+                @endforeach
+            </div>
         </div>
+       
     </div>
 </div>
 @endsection
