@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -76,7 +78,7 @@
                 </div>
             </div>
         </nav>
-
+        
         <main class="py-4">
             @yield('content')
         </main>
@@ -87,6 +89,9 @@
         <main class="py-4">
             @yield('ciccio')
         </main>
+        <footer>
+            @include('layouts.footer')
+        </footer>
     </div>
 </body>
 </html>
