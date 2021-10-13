@@ -187,14 +187,4 @@
 
 </div>
 @endsection
-<style>
-    nav img{
-        width:150px;
-        
-    }
-    nav{
-        margin-bottom: 30px;
-    }
-    .buttons{
-        display: flex;
-</style>
+
