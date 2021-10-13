@@ -16,7 +16,15 @@
             <h1 class="p-2">{{ $apartment->title}}</h1>
 
             <div class=" d-flex justify-content-center apartment-container-img">
-                <img src="{{ $apartment->img }}" alt="{{ $apartment->title}}">
+                <div class="row img-map">
+                    <div class="col-6">
+                        <img class="img-fluid" src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
+                    </div>
+             
+                    <div class="col-6">
+                        <map-component :apartment="{{ $apartment }}"></map-component>
+                    </div>
+                </div>
             </div>
             
             <h3>Descrizione</h3>
