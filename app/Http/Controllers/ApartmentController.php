@@ -180,6 +180,6 @@ class ApartmentController extends Controller
     public function destroy(Apartment $apartment)
     {
         $apartment->delete();
-        return redirect()->route('apartement.index');
+        return redirect()->route('apartment.index');
     }
 }

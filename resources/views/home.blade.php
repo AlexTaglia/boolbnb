@@ -188,13 +188,85 @@
 </div>
 @endsection
 <style>
-    nav img{
-        width:150px;
-        
-    }
-    nav{
-        margin-bottom: 30px;
-    }
-    .buttons{
-        display: flex;
+  nav img{
+      width:150px;
+  }
+  nav{
+      margin-bottom: 30px;
+  }
+  .buttons{
+      display: flex;
+      justify-content: center;
+  }
+  .form-container{
+  display: flex;
+  background-color:#f5f5f5;
+  border-radius: 100px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+input:focus{
+outline: none;
+}
+.explore-cities{
+color:white;
+}
+.form-container input, .form-container button  {
+  height:50px;
+}
+.form-container button {
+width: 180px;
+border:none;
+}
+input{
+cursor: pointer;
+}
+.input-container input{
+ width: 300px;
+ border:none;
+ border-right: 1px solid black;
+ background: url(../img/bed.png) no-repeat;
+ padding-left: 35px;
+ background-size: 25px 25px;
+ background-position: 3px 10px;
+}
+.input-second-container input{
+  width: 260px;
+  background: url(../img/calendario.png) no-repeat;
+  padding-left: 35px;
+  background-size: 25px 25px;
+  background-position: 3px 10px;
+  border:none;
+  border-right: 1px solid black;
+}
+.input-third-container input{
+  width:350px;
+  background: url(../img/utente.png) no-repeat;
+  padding-left: 35px;
+  background-size: 25px 25px;
+  background-position: 3px 10px;
+  border:none;
+  border-right: 1px solid black;
+}
+input:hover{
+background-color:#e9e0e0;
+}
+.cities-container img{
+width:200px;
+}
+.img-box{
+padding-bottom: 15px;
+}
+.text-box{
+padding: 15px;
+}
+.cities-container{
+display: flex;
+align-items: center;
+}
+.section-struttura{
+  display: flex;
+  flex-direction: row;
+  color:black;
+}
 </style>
