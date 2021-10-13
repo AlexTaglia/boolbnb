@@ -24,9 +24,10 @@ class HomeController extends Controller
     public function index()
     {
     
-         $allApartments = Apartment::paginate(12);
-        
-        return view('home', compact('allApartments'));
+        $allApartments = Apartment::paginate(12);
+        $visibleApartments = Apartment::where('visible', '1')->limit(8)->get();
+        // dd($visibileApartments);
+        return view('home', compact('allApartments', 'visibleApartments'));
        
 
     }

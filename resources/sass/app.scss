@@ -4,12 +4,12 @@
 // Variables
 @import 'variables';
 
-@import '_home';
+
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-
+@import'footer';
 @import '~bootstrap-icons/font/bootstrap-icons.css';
 
 @import 'login';
@@ -18,18 +18,12 @@
 
 @import 'index';
 
-
+@import 'home';
 
 @import 'show';
 @import 'create';
 
 #app{
-    width: 100%;
-    min-height: 100vh;
-
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 
     .navbar{
         background:#0000008f;
