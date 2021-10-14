@@ -6,48 +6,37 @@
     <div class="row">
       <div class="col-12 info-covid-box d-flex align-items-center justify-content-center ">
         <a href="http://www.viaggiaresicuri.it/">
-          <h5>Scopri le informazioni più recenti sulla nostra risposta all'emergenza COVID-19</h5>
+          <h6>Scopri le informazioni più recenti sulla nostra risposta all'emergenza COVID-19</h6>
         </a>
       </div>
     </div>
   </div>
       <header class="container">
-
+             
         <div class="row">
-          <form class="col-md-12 col-lg-12 form-container">
-            <div class="input-container">
-              <input type="text" class="where-togo" placeholder="Dove vuoi andare? ">
-            
-            </div>
-            <div class="input-second-container">
-                <input type="text" class="date" placeholder="Check-in - Check-out">
-            </div>
-            <div class="input-third-container">
-              <input type="text" class="booked" placeholder="2 adulti - 0 bambini ">
+          <div class="col-12 text-center search-box">
+           <input type="text" placeholder="Dove vuoi andare?">
+           <button><i class="fas fa-search"></i></button>
           </div>
-          <div class="input-fourth-container">
-             <button class="btn-search">
-              
-              Cerca
-            </button>
+       </div>     
+    
+    
+          
 
-            
-          </div>
-       </form>
 
-        </div>
 
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center header-text">
-            <h4>Non sai dove andare? Nessun problema!</h4>
-            <a href="">
-              <button>
-                <span>Sono flessibile</span>
-              </button>
-            </a>
-            
-          </div>
-        </div>
+     <div class="row">
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center header-text">
+         <h4>Non sai dove andare? Nessun problema!</h4>
+         <a href="">
+           <button>
+             <span>Sono flessibile</span>
+           </button>
+         </a>
+         
+       </div>
+     </div>
+       
       </header>
    
 </div>
@@ -157,149 +146,148 @@
 
 <style>
 
- 
- .info-covid-box{
-   height: 70px;
-   background-color: rgb(88, 85, 85);
- }
-
-  .home-container-fluid{
-    width:100%;
-    height: 1000px;
-    background: url(../img/airbnb-original.jpeg) no-repeat center;
-    background-size:cover;
-    
-   
-  }
-.header-text h4{
-  font-size:30px;
-  font-weight: bold;
-}
-.header-text{
-  padding-top: 200px;
-}
-  nav img{
-      width:150px;
-      
-
-  }
-   .buttons{
-      display: flex;
-      justify-content: center;
-  }
-  .form-container{
-  display: flex;
-  background-color:#f5f5f5;
-  border-radius: 100px;
-  border: 1px solid white;
-  cursor: pointer;
-}
-input:focus{
-outline: none;
-}
-.explore-cities{
-
-color:black;
-}
-.form-container input, .form-container button  {
-
-  height:50px;
-}
-.form-container button {
-width: 180px;
-border:none;
-}
-
-input{
-cursor: pointer;
-}
-.input-container input{
- width: 300px; 
-
- border:none;
- border-right: 1px solid black;
- background: url(../img/bed.png) no-repeat;
- padding-left: 35px;
-
- background-size: 25px 25px;  
- background-position: 3px 10px;
-
-
-}
-.input-second-container input{
-  width: 260px;
-  background: url(../img/calendario.png) no-repeat;
-  padding-left: 35px;
-
-  background-size: 25px 25px;  
-
-  background-position: 3px 10px;
-  border:none;
-  border-right: 1px solid black;
-}
-.input-third-container input{
-  width:350px;
-  background: url(../img/utente.png) no-repeat;
-  padding-left: 35px;
-
-  background-size: 25px 25px;  
-
-  background-position: 3px 10px;
-  border:none;
-  border-right: 1px solid black;
-}
-
-header .header-text button{
-  width:250px;
-  height:60px;
-  border-radius:100px;
-  background-color: white;
-  color:rgb(250, 90, 189);
-  font-size: 20px;
-  font-weight:800;
-}
-
-input:hover{
-background-color:#e9e0e0;
-}
-.cities-container img{
-
-
-width:200px;
-}
-
-.img-box{
-padding-bottom: 15px;
-}
-.text-box{
-padding: 15px;
-}
-.cities-container{
-display: flex;
-align-items: center;
-}
-.section-struttura{
-  display: flex;
-  flex-direction: row;
-  color:black;
-}
-
-@media all and (max-width: 992px){
-form{
-display: flex;
-flex-direction:column;
-align-items:center;
-}
   input{
-    border:none;
+    width: 500px;
+    height:50px;
+    background-color: white;
+    background: url(../img/bed.png) no-repeat;
+    padding-left: 45px;
+    background-size: 25px 25px;  
+    background-position: 12px 10px;
+    border-radius:100px;
+    
   }
-}
-.card img{
-  width:100%;
-}
-.card{
-  padding: 15px;
-}
-</style>
-
+  input[type="text"]{
+ 
+ background-color : white; 
+ 
+ }
+ .search-box{
+   padding-top: 200px;
+ }
+  .search-box button{
+     height:50px;
+     width:50px;
+     border-radius: 50%;
+     background-color: rgb(255,90,96);
+     color:white;
+     border:none;
+  }
+ 
+  
+  i{
+    font-size: 20px;
+  }
+  .info-covid-box{
+    height: 70px;
+    background-color: rgb(88, 85, 85);
+    color:grey;
+  }
+  
+  
+   .home-container-fluid{
+     width:100%;
+     height: 80vh;
+     background-image: url(../img/airbnb-original.jpeg);
+     background-position: center;
+     background-size:contain;
+     
+    
+   }
+ .header-text h4{
+   font-size:30px;
+   font-weight: bold;
+ }
+ .header-text{
+   padding-top: 50px;
+ }
+   nav img{
+       width:150px;
+       
+ 
+   }
+   nav{
+       margin-bottom: 30px;
+   }
+   .buttons{
+       display: flex;
+       justify-content: center;
+   }
+ 
+ input:focus{
+ outline: none;
+ }
+ .explore-cities{
+ 
+ color:black;
+ }
+ 
+ 
+ header .header-text button{
+   width:250px;
+   height:60px;
+   border-radius:100px;
+   background-color: white;
+   color: rgb(255,90,96);;
+   font-size: 20px;
+   font-weight:800;
+   }
+ input:hover{
+ background-color:#e9e0e0;
+  }
+ .cities-container img{
+ 
+ 
+ width:200px;
+ }
+ .img-box{
+ padding-bottom: 15px;
+ }
+ .text-box{
+ padding: 15px;
+ }
+ .cities-container{
+ display: flex;
+ align-items: center;
+ }
+ .section-struttura{
+   display: flex;
+   flex-direction: row;
+   color:black;
+ }
+ 
+ .card img{
+   width:100%;
+ }
+ .card{
+   padding: 15px;
+ }
+ a h5{
+   color:rgb(187, 178, 178) ;
+ }
+ 
+ a:hover, a:visited, a:link, a:active
+ {
+   text-decoration: none!important;
+ 
+ -webkit-box-shadow: none!important;
+ box-shadow: none!important;
+ }
+  input{
+   border:none;
+ }
+ 
+ @media all and (max-width: 992px){
+ form{
+ display: flex;
+ flex-direction:column;
+ align-items:center;
+   }
+  .search-box input{
+   width:250px;
+  }
+ }
+ 
+ </style>
+ 
 
