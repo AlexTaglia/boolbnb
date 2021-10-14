@@ -1,21 +1,22 @@
 #bg-create{
 
     form{
-        color: white;
+        color: black;
         .form-group{
         
             position: relative;
-            color: white;
+            color: black;
             button{
                 width: 100%;
             }
 
             .form-control{
-                color: white;
+                color: black;
                 width: 100%;
                 padding: 10px;
                 outline: 0;
-                border: 1px solid rgb(109, 109, 109);                background:transparent;
+                border: 1px solid rgb(109, 109, 109);               
+                background:white;
                 font-size: 15px;
             }
             .form-control:focus~label,
