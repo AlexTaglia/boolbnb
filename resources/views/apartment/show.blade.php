@@ -6,23 +6,21 @@
     <div class="row justify-content-center">
         
         <div class="col-md-10">
-            <div class="row justify-content-between p-3">
+            <div class=" justify-content-between p-3">
                 
                 <h1 class="p-2">{{ $apartment->title}}</h1>
-                <a href="{{ route('apartment.index') }}">
-            
-                    <button class="btn btn-primary">
-                        <i class="bi bi-arrow-left-square">Return</i>
-                    </button>
-                </a>
-            </div>
-
-            <div class=" d-flex justify-content-center apartment-container-img">
-
-                <img src="{{$apartment->img}}" alt="{{ $apartment->title}}">
-
-            </div>
-            
+                <div class=" d-flex justify-content-between apartment-container-img">
+                <div class="row img-map">
+                    <div class="col-6">
+                    <!-- <img class="img-fluid" src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}"> -->
+                        <img class="img-fluid" src="{{ $apartment->img }}" alt="{{ $apartment->title}}">
+                    </div>
+             
+                    <div class="col-6">
+                        <map-component :apartment="{{ $apartment }}"></map-component>
+                    </div>
+                </div>
+            </div>            
             <h3>Descrizione</h3>
                         <div class='row'>
                             <p>{{ $apartment->description}}</p>
@@ -86,7 +84,7 @@
                 <div>
                     <div> {{$messag->sender_name}} -> {{$messag->email}}</div>
                   
-                    <p> {{$messag->text}} <a href="{{ route('apartment.message.create') }}"><i class="bi bi-skip-end"> Rispondi</i></a> </p>
+                    <p> {{$messag->text}} <a href="#"><i class="bi bi-skip-end"> Rispondi</i></a> </p>
                     
                     <hr>
                 </div>

@@ -8,13 +8,6 @@
             <input type="checkbox" :name="service.name" :id="service.name" :value="service.id" v-model="selectedServices">
         </div>
 
-        {{ selectedServices }}
-
-        <!-- <select  id="" v-model="sort" @change="sortValue">
-            <option value="1" >Active</option>
-            <option value="0" >In-Active</option>
-        </select> -->
-
         <div class="col title">{{ title }}</div>
 
         <div class="col card-body">
@@ -72,7 +65,5 @@
 </script> 
 
 <style lang="scss" scoped>
-    * {
-        color: white;
-    }
+   
 </style>
