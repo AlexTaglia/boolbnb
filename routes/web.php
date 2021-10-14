@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/index', 'ApartmentController@index')->name('index')->middleware('auth');
 Route::get('/home', 'HomeController@index');
 
-
+Route::get('/search', 'SearchController@index');
 Route::resource('apartment', 'ApartmentController')->middleware('auth');
 
 Route::get('/home/message', 'MessageController@index');
