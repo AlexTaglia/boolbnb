@@ -1,32 +1,47 @@
-.container.index{
-    .table{
-        // border-collapse: separate;
-        border-radius: 20px;
-        box-shadow: 5px 5px 10px $lightGray;
-        overflow: hidden;
+.bg-cont{
+    // background-image: url(../../public/images/airbnb-plus-scaled.jpg);
+    // min-height: 100vh;
+    // background-position: center;
+    // background-size: cover;
+    .bg-index{
+       
+        .table{
+            // border-collapse: separate;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px $lightGray;
+            overflow: hidden;
+            tr{
+                background: #ffffffa8;
+            }
+            .cont-table{
+                color: white;
+                font-size: 15px;
+                background: #00000070;
+                thead{
+                    vertical-align: top;
+                    background-color: $lightGray;
+                    th{
+                        vertical-align: top;
+                        border: none;
+                    }
+                }
         
-        thead{
-            vertical-align: top;
-            background-color: $lightGray;
-            th{
-                vertical-align: top;
-                border: none;
+                img{
+                    width: 150px;
+                    border-radius: 4px;
+                }
+            }
+            
+        }
+    
+        button{
+            &:hover{
+                color: $blue;
             }
         }
-
-        img{
-            width: 150px;
-            border-radius: 4px;
+    
+        .btn{
+         padding: 0 6px;   
         }
-    }
-
-    button{
-        &:hover{
-            color: $blue;
-        }
-    }
-
-    .btn{
-     padding: 0 6px;   
     }
 }

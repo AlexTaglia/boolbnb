@@ -3,17 +3,19 @@
 @section('content')
 <div class="container bg-show">
 
-    <a href="{{ route('apartment.index') }}">
-      <button class="btn">
-        <i class="bi bi-arrow-left"></i>
-      </button>
-    </a>
-
     <div class="row justify-content-center">
-
+        
         <div class="col-md-10">
-
-            <h1 class="p-2">{{ $apartment->title}}</h1>
+            <div class="row justify-content-between p-3">
+                
+                <h1 class="p-2">{{ $apartment->title}}</h1>
+                <a href="{{ route('apartment.index') }}">
+            
+                    <button class="btn btn-primary">
+                        <i class="bi bi-arrow-left-square">Return</i>
+                    </button>
+                </a>
+            </div>
 
             <div class=" d-flex justify-content-center apartment-container-img">
 
@@ -82,11 +84,12 @@
             <div>
                 @foreach ($apartment->message as $messag )
                 <div>
-                        <div> {{$messag->sender_name}}</div>
-                        <div> {{$messag->emai}}
-                        <p> {{$messag->text}}</p>
-                        <hr>
-                    </div>
+                    <div> {{$messag->sender_name}} -> {{$messag->email}}</div>
+                  
+                    <p> {{$messag->text}} <a href="{{ route('apartment.message.create') }}"><i class="bi bi-skip-end"> Rispondi</i></a> </p>
+                    
+                    <hr>
+                </div>
                 @endforeach
             </div>
         </div>

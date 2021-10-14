@@ -162,10 +162,7 @@
    height: 70px;
    background-color: rgb(88, 85, 85);
  }
- /* .home-container-fluid{
-   
-    height: 1000px;
- } */
+
   .home-container-fluid{
     width:100%;
     height: 1000px;
@@ -186,10 +183,7 @@
       
 
   }
-  nav{
-      margin-bottom: 30px;
-  }
-  .buttons{
+   .buttons{
       display: flex;
       justify-content: center;
   }
@@ -216,7 +210,7 @@ width: 180px;
 border:none;
 }
 
-input.{
+input{
 cursor: pointer;
 }
 .input-container input{
@@ -295,7 +289,7 @@ form{
 display: flex;
 flex-direction:column;
 align-items:center;
-  }
+}
   input{
     border:none;
   }
