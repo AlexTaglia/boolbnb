@@ -28,9 +28,10 @@
     <div id="app">
         <nav class="navbar navbar-expand-md  shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                <img class="logo" src="../img/airbnb_logo_detail.jpeg" alt="BoolBnB" style="height:70px">
+                <h4 class="text-nav">BoolBnB</h4>
+
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -103,3 +104,18 @@
 
 </body>
 </html>
+<style>
+     .text-nav{
+    color:white;
+    font-weight:800;
+    font-size: 25px;
+    padding-left:10px;
+}
+
+.container .logo{
+    width:70px;
+}
+nav{
+    color:white;
+}
+</style>
