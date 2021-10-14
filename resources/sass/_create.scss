@@ -1,39 +1,40 @@
-#bg-create{
 
-    form{
-        color: black;
-        .form-group{
-        
-            position: relative;
+    #bg-create{
+    
+        form{
             color: black;
-            button{
-                width: 100%;
-            }
-
-            .form-control{
+            .form-group{
+            
+                position: relative;
                 color: black;
-                width: 100%;
-                padding: 10px;
-                outline: 0;
-                border: 1px solid rgb(109, 109, 109);               
-                background:white;
-                font-size: 15px;
+                button{
+                    width: 100%;
+                }
+    
+                .form-control{
+                    color: black;
+                    width: 100%;
+                    padding: 10px;
+                    outline: 0;
+                    border: 1px solid rgb(109, 109, 109);               
+                    background:white;
+                    font-size: 15px;
+                }
+                .form-control:focus~label,
+                .form-control:valid~label{
+                    top: -30px;
+                    font-size: 14px;
+                }
+                .lable-control{
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    padding: 7px 10px;
+                    cursor: text;
+                    transition: 0.2s;
+                }
             }
-            .form-control:focus~label,
-            .form-control:valid~label{
-                top: -30px;
-                font-size: 14px;
-            }
-            .lable-control{
-                height: 100%;
-                position: absolute;
-                left: 0;
-                top: 0;
-                padding: 7px 10px;
-                cursor: text;
-                transition: 0.2s;
-            }
+    
         }
-
     }
-}

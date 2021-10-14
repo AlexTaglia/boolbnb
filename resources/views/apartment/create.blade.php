@@ -7,7 +7,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="mt-5 pt-2">
-        
+                <a href="{{ route('apartment.index') }}">
+
+                    <button class="btn btn-primary">
+                        <i class="bi bi-arrow-left-square">Return</i>
+                    </button>
+                </a>
                 <form class="mt-5" action="{{route('apartment.store')}}" method='post' enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mb-4">

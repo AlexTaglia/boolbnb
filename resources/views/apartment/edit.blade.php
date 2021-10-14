@@ -5,17 +5,12 @@
 <div class="container" id="bg-create">
     <div class="row justify-content-center">
         <div class="col-md-8">
-    
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-    
+            <a href="{{ route('apartment.index') }}">
+
+                <button class="btn btn-primary">
+                    <i class="bi bi-arrow-left-square">Return</i>
+                </button>
+            </a>
             <form class="mt-5" action="{{route('apartment.update', $apartment)}}" method='post' enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
