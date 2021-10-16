@@ -21,7 +21,7 @@ Auth::routes();
 
 
 Route::get('/index', 'ApartmentController@index')->name('index')->middleware('auth');
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/search', 'SearchController@index');
 Route::resource('apartment', 'ApartmentController')->middleware('auth');
