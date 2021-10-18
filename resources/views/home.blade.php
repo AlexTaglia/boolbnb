@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="prova-bg">
 <div class="home-container-fluid">
   <div class="container-fluid">
     <div class="row">
@@ -16,14 +17,10 @@
         <div class="row">
           <div class="col-12 text-center search-box">
            <input type="text" placeholder="Dove vuoi andare?">
-           <button><i class="fas fa-search"></i></button>
+           <a href="{{ route('search')}}"><button><i class="fas fa-search"></i></button></a>
+           
           </div>
        </div>     
-    
-    
-          
-
-
 
      <div class="row">
        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center header-text">
@@ -40,7 +37,7 @@
       </header>
    
 </div>
-
+</div>
 
 
 @endsection
@@ -124,11 +121,6 @@
                               <i class="bi bi-zoom-in"></i>
                           </button>
                       </a>
-  
-                      
-                      
-                     
-
                   </div>
                   
 
@@ -186,11 +178,10 @@
   
   
    .home-container-fluid{
-     width:100%;
      height: 80vh;
-     background-image: url(../img/airbnb-original.jpeg);
-     background-position: center;
-     background-size:contain;
+     background: url(../img/airbnb-original.jpeg) no-repeat;
+     background-position: bottom;
+     background-size:cover;
      
     
    }
@@ -205,9 +196,6 @@
        width:150px;
        
  
-   }
-   nav{
-       margin-bottom: 30px;
    }
    .buttons{
        display: flex;

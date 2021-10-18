@@ -23,10 +23,10 @@ Auth::routes();
 Route::get('/index', 'ApartmentController@index')->name('index')->middleware('auth');
 Route::get('/', 'HomeController@index');
 
-Route::get('/search', 'SearchController@index');
-Route::resource('apartment', 'ApartmentController')->middleware('auth');
+Route::get('/search', 'SearchController@index')->name('search');
+Route::resource('apartment', 'ApartmentController');
 
-Route::get('/home/message', 'MessageController@index');
+Route::get('/message', 'MessageController@index');
 
-Route::resource('apartment.message', 'MessageController');
+Route::resource('messages', 'MessageController');
 

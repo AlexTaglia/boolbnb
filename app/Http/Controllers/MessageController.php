@@ -15,11 +15,9 @@ class MessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $apartment = Apartment::find($id);
-        return view('apartment.message', compact('apartment'));
-
+       
     }
 
     /**
@@ -29,9 +27,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        $apartment = Apartment::all();
-        $message = Message::all();
-        return view('apartment.message.create', compact('message', 'apartment'));
+        
     }
 
     /**
@@ -40,27 +36,27 @@ class MessageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Apartment $apartment)
+    public function store(Request $request)
     {   
-        $apartment = Apartment::all();
-
-        // dd($request);
+        $data = $request->all();
+       
         $request->validate([
+            'sender_id' => 'required',
             'text' => 'required',
             'sender_name' => 'required',
             'email' => 'required',
         ]);
 
-        $data = $request->all();
         $message = new Message;
         
         $message->text = $data['text'];  
         $message->sender_name = $data['sender_name'];  
         $message->email = $data['email'];  
-        $message->apartment_id= Auth::id();
+        $message->apartment_id= $data['sender_id'];
         $message->save();
 
-        return view('apartment.message', compact('message'));
+        return redirect()->back()->with('status', 'messaggio inviato correttamente');
+
     }
 
     /**
@@ -71,7 +67,7 @@ class MessageController extends Controller
      */
     public function show($id)
     { 
-        $apartment = Apartment::all();
+       
         // return view('apartment.message', compact('apartment'));
 
     }
@@ -84,8 +80,7 @@ class MessageController extends Controller
      */
     public function edit($id)
     {
-        $apartment = Apartment::all();
-        return view('apartment.message', compact('apartment'));
+       
     }
 
     /**
