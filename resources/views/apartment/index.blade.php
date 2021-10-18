@@ -30,7 +30,7 @@
               <th scope="col">Bagni</th>
               <th scope="col">Metri quadrati</th>
               <th scope="col">Indirizzo</th>
-              <th scope="col">Prezzo per notte</th>
+              <th scope="col">Prezzo /notte</th>
               <th scope="col">Actions</th>
             </tr>
           </thead>
