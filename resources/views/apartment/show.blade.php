@@ -21,8 +21,8 @@
                 <div class="row img-map">
                     <div class="col-6">
 
-                        <!-- <img class="img-fluid" src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}"> -->
-                        <img class="img-fluid" src="{{ $apartment->img }}" alt="{{ $apartment->title}}">
+                        <img class="img-fluid" src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}"> 
+                        {{-- <img class="img-fluid" src="{{ $apartment->img }}" alt="{{ $apartment->title}}"> --}}
 
                     </div>
             

@@ -66,6 +66,7 @@ class ApartmentController extends Controller
             'address' => 'required',
             'lat' => 'required',
             'long' => 'required',
+            
             'description' => 'required',
             'img' => 'required', 'image | mimes:jpeg,jpg,png',
             'price_per_night' => 'required',
@@ -74,7 +75,7 @@ class ApartmentController extends Controller
         // dd($request);
         $data = $request->all();
         $apartment = new Apartment;
-
+        $sponsors = Sponsor::all();
         $apartment->title = $data['title'];  
         $apartment->n_beedroom = $data['n_beedroom'];  
         $apartment->n_beds = $data['n_beds'];  
@@ -108,7 +109,7 @@ class ApartmentController extends Controller
             $apartment->sponsor()->sync($data['sponsors']);
         }
 
-        return view('apartment.show', compact('apartment'));
+        return view('apartment.show', compact('apartment', 'sponsors'));
 
 
     }

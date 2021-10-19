@@ -26,9 +26,19 @@
 </head>
 <body>
     <div id="app">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 info-covid-box d-flex align-items-center justify-content-center ">
+                <a href="http://www.viaggiaresicuri.it/">
+                  <h6>Scopri le informazioni più recenti sulla nostra risposta all'emergenza COVID-19</h6>
+                </a>
+              </div>
+            </div>
+          </div>
         <nav class="navbar navbar-expand-md  shadow-sm">
+            
             <div class="container">
-             
+               
                 <a href="{{route('home')}}" class="d-flex">
                     <img class="logo" src="../img/airbnb_logo_detail.jpeg" alt="BoolBnB" style="height:70px">
                     <h4 class="text-nav">BoolBnB</h4>
@@ -64,7 +74,9 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+                                
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                               
                                     <span class="auth-text">{{ Auth::user()->name }}</span>
                                     
                                     <img class="img-user" src="{{ Auth::user()->img }}" alt="picture of {{ Auth::user()->name }}">
@@ -111,11 +123,12 @@
 </html>
 <style>
      .text-nav{
-    color:white;
-    font-weight:800;
+    color: rgb(255,90,96);
+    font-weight:900;
     font-size: 25px;
     padding-left:10px;
     padding-top: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
  .logo{
@@ -124,22 +137,22 @@
 }
 .global-icon{
     margin-top: 10px;
+ 
 }
 nav{
-    color:white;
+    color:rgb(255,90,96);
+
 }
 .nav-item:hover{
     color:white;
     font-size: 16px;
 }
-a{
-    text-decoration: beige;
-}
+
 .auth-text{
     color:white;
 }
 a{
-    color:white;
+    color:wrgb(255,90,96)
 }
 
 
