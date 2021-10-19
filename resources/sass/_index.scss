@@ -33,10 +33,16 @@
             }
             
         }
-    
+        button{
+            background-color: rgb(255,90,96);
+            padding:15px 10px;
+            border-radius: 50px;
+            border:none;
+            color:white;
+        }
         button{
             &:hover{
-                color: $blue;
+                color: black;
             }
         }
     

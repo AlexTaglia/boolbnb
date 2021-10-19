@@ -9,14 +9,14 @@
             <div class="mt-5 pt-2">
                 <a href="{{ route('apartment.index') }}">
 
-                    <button class="btn btn-primary">
+                    <button class="btn-create">
                         <i class="bi bi-arrow-left-square">Return</i>
                     </button>
                 </a>
                 <form class="mt-5" action="{{route('apartment.store')}}" method='post' enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mb-4">
-                        <input class="form-control" type="text" name="title" id="title" maxlength="255" required autocomplete="title" autofocus>
+                        <input class="form-control" type="text" name="title" id="title" maxlength="100" required autocomplete="title" autofocus>
                         <label class="lable-control" for="title">Titolo</label>
                     </div>
         

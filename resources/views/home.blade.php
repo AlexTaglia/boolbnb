@@ -75,9 +75,9 @@
               <div class="card mb-3">
                   <div class="card-header">
                   
-                    <h3>
+                    <h4>
                       {{ $apartment->title}}
-                   </h3> 
+                   </h4> 
                   </div>
 
                   <div class="card-body">
@@ -131,7 +131,9 @@
 @endsection
 
 <style>
-
+.card-header{
+  height:100px;
+}
   input{
     width: 500px;
     height:50px;
@@ -152,7 +154,7 @@
    color:black;
  }
  .search-box{
-   padding-top: 200px;
+   padding-top: 250px;
  }
   .search-box button{
      height:50px;
