@@ -12,8 +12,8 @@
                 <div class=" d-flex justify-content-between apartment-container-img">
                 <div class="row img-map">
                     <div class="col-6">
-                    <!-- <img class="img-fluid" src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}"> -->
-                        <img class="img-fluid" src="{{ $apartment->img }}" alt="{{ $apartment->title}}">
+                    <img class="img-fluid" src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
+                        <!-- <img class="img-fluid" src="{{ $apartment->img }}" alt="{{ $apartment->title}}"> -->
                     </div>
              
                     <div class="col-6">
@@ -36,11 +36,12 @@
                                 @endforeach
                             </ul>   
                         </div> 
-            
-            <div class="row cont-description">
-                <h3  class="p-4 col-md-12">Descrizione Appartamento</h3>
-                <div class="col-md-6">
-                    <ul>
+                        
+                        
+                        <div class="row cont-description">
+                            <h3  class="p-4 col-md-12">Descrizione Appartamento</h3>
+                            <div class="col-md-6">
+                                <ul>
                         <li>
                             <i class="bi bi-house-fill"></i>  N.di stanze: {{ $apartment->n_beedroom}}
                         </li>
@@ -83,15 +84,33 @@
                 @foreach ($apartment->message as $messag )
                 <div>
                     <div> {{$messag->sender_name}} -> {{$messag->email}}</div>
-                  
+                    
                     <p> {{$messag->text}} <a href="#"><i class="bi bi-skip-end"> Rispondi</i></a> </p>
                     
                     <hr>
                 </div>
                 @endforeach
             </div>
+            <div>Aggiungi sponsorizzazione:
+                @foreach($sponsors as $sponsor)
+                <div>
+                    <a href="{{ route('payment.process', [$sponsor->id, $apartment->id])}}">
+                        <span>
+                            {{$sponsor->name}} - 
+                        </span>
+                        <span>
+                            € {{$sponsor->price}} - 
+                        </span>
+                        <span>
+                            gg {{$sponsor->duration}}
+                        </span>
+                    </a>    
+                </div>
+                @endforeach
+            </div>
+
         </div>
-       
+        
     </div>
 </div>
 @endsection

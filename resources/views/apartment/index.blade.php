@@ -40,7 +40,9 @@
             <tr class="cont-table">
               
               <td>
-                <img class="img-fluid" src=" {{ $apartment->img }}" alt="{{ $apartment->title}}">
+                <!-- <img class="img-fluid" src=" {{ $apartment->img }}" alt="{{ $apartment->title}}"> -->
+                <img class="img-fluid" src=" {{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
+
               </td>
               <td>{{ $apartment->title}}</td>
               <td>{{ $apartment->n_beedroom}}</td>
