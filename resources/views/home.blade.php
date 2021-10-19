@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="prova-bg">
 <div class="home-container-fluid">
   <div class="container-fluid">
     <div class="row">
@@ -12,20 +13,31 @@
     </div>
   </div>
       <header class="container">
-             
+        <div class="row">
+          <ul class="nav justify-content-center col-12">
+            <li class="nav-item navbar hover">
+              <a class="nav-link active" aria-current="page" href="#">Alloggi</a>
+            </li>
+            <li class="nav-item navbar hover">
+              <a class="nav-link" href="#">Esperienze</a>
+            </li>
+            <li class="nav-item navbar hover">
+              <a class="nav-link" href="#">Esperienze online</a>
+            </li>
+            
+          </ul>
+        </div>
+        
         <div class="row">
           <div class="col-12 text-center search-box">
            <input type="text" placeholder="Dove vuoi andare?">
-           <button><i class="fas fa-search"></i></button>
+
+           <a href="{{ route('search')}}"><button><i class="fas fa-search"></i></button></a>
+           
           </div>
        </div>     
-    
-    
-          
 
-
-
-     <div class="row">
+     {{-- <div class="row">
        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center header-text">
          <h4>Non sai dove andare? Nessun problema!</h4>
          <a href="">
@@ -35,12 +47,12 @@
          </a>
          
        </div>
-     </div>
+     </div> --}}
        
       </header>
    
 </div>
-
+</div>
 
 
 @endsection
@@ -79,8 +91,9 @@
 @section('ciccio')
 <div class="container">
   <div class="row justify-content-center">
+    
       @foreach ($allApartments as $apartment)
-          <div class="col-4">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
               <div class="card mb-3">
                   <div class="card-header">
                   
@@ -124,11 +137,6 @@
                               <i class="bi bi-zoom-in"></i>
                           </button>
                       </a>
-  
-                      
-                      
-                     
-
                   </div>
                   
 
@@ -172,25 +180,34 @@
      background-color: rgb(255,90,96);
      color:white;
      border:none;
+    
   }
+.nav li a{
+  color:white;
+}
+.hover:hover{
+  border-bottom: 1px solid black;
+  opacity: 0.7;
+  font-size: 17px;
+  font-weight:bold;
+}
  
   
   i{
     font-size: 20px;
   }
   .info-covid-box{
-    height: 70px;
+    height: 50px;
     background-color: rgb(88, 85, 85);
     color:grey;
   }
   
   
    .home-container-fluid{
-     width:100%;
      height: 80vh;
-     background-image: url(../img/airbnb-original.jpeg);
-     background-position: center;
-     background-size:contain;
+     background: url(../img/airbnb-original.jpeg) no-repeat;
+     background-position: bottom;
+     background-size:cover;
      
     
    }
@@ -201,14 +218,8 @@
  .header-text{
    padding-top: 50px;
  }
-   nav img{
-       width:150px;
-       
- 
-   }
-   nav{
-       margin-bottom: 30px;
-   }
+
+
    .buttons{
        display: flex;
        justify-content: center;
@@ -222,13 +233,23 @@
  color:black;
  }
  
- 
+ a h6{
+  color:rgb(187, 178, 178) ;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+  text-decoration: none!important;
+
+-webkit-box-shadow: none!important;
+box-shadow: none!important;
+}
  header .header-text button{
    width:250px;
    height:60px;
    border-radius:100px;
    background-color: white;
-   color: rgb(255,90,96);;
+   color: rgb(255,90,96);
    font-size: 20px;
    font-weight:800;
    }

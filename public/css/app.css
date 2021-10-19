@@ -12333,12 +12333,30 @@ a.text-dark:focus {
 }
 
 footer {
-  height: 100px;
   background-color: #EBEBEB;
 }
 
 footer .footer-container {
-  padding-top: 20px;
+  padding: 20px 0 20px 0;
+}
+
+footer ul {
+  margin-top: 24px;
+}
+
+footer ul li {
+  list-style: none;
+  margin-top: 12px;
+}
+
+footer a {
+  color: #494545;
+}
+
+footer .first-text {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .cont-login {
@@ -12347,7 +12365,6 @@ footer .footer-container {
 
 .cont-login .card {
   background: transparent;
-  color: white;
   border: 1px solid #6d6d6d;
 }
 
@@ -12369,7 +12386,6 @@ footer .footer-container {
   border: 1px solid #6d6d6d;
   background: transparent;
   font-size: 15px;
-  color: white;
 }
 
 .cont-login .card .card-body .form-group .form-control:focus ~ label,
@@ -12395,7 +12411,6 @@ footer .footer-container {
 
 .cont-register .card {
   background: transparent;
-  color: white;
   border: 1px solid #6d6d6d;
 }
 
@@ -12417,7 +12432,6 @@ footer .footer-container {
   border: 1px solid #6d6d6d;
   background: transparent;
   font-size: 15px;
-  color: white;
 }
 
 .cont-register .card .card-body .form-group .form-control:focus ~ label,
@@ -12441,37 +12455,143 @@ footer .footer-container {
   width: 100%;
 }
 
-.container.index .table {
+.bg-cont .bg-index .table {
   border-radius: 20px;
   box-shadow: 5px 5px 10px #dee2e6;
   overflow: hidden;
 }
 
-.container.index .table thead {
+.bg-cont .bg-index .table tr {
+  background: #ffffffa8;
+}
+
+.bg-cont .bg-index .table .cont-table {
+  color: white;
+  font-size: 15px;
+  background: #00000070;
+}
+
+.bg-cont .bg-index .table .cont-table thead {
   vertical-align: top;
   background-color: #dee2e6;
 }
 
-.container.index .table thead th {
+.bg-cont .bg-index .table .cont-table thead th {
   vertical-align: top;
   border: none;
 }
 
-.container.index .table img {
+.bg-cont .bg-index .table .cont-table img {
   width: 150px;
   border-radius: 4px;
 }
 
-.container.index button:hover {
+.bg-cont .bg-index button:hover {
   color: #3490dc;
 }
 
-.container.index .btn {
+.bg-cont .bg-index .btn {
   padding: 0 6px;
 }
 
-.bg-show {
+nav img {
+  width: 150px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  background-color: #f5f5f5;
+  border-radius: 100px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+.explore-cities {
   color: white;
+}
+
+.form-container input,
+.form-container button {
+  height: 50px;
+}
+
+.form-container button {
+  width: 180px;
+  border: none;
+}
+
+input {
+  cursor: pointer;
+}
+
+.input-container input {
+  width: 300px;
+  border: none;
+  border-right: 1px solid black;
+  background: url(/images/bed.png?825c571bad65b87ccc5e7f7830371375) no-repeat;
+  padding-left: 35px;
+  background-size: 25px 25px;
+  background-position: 3px 10px;
+}
+
+.input-second-container input {
+  width: 260px;
+  background: url(/images/calendario.png?3bd18bbb09392a83be804eace5124de7) no-repeat;
+  padding-left: 35px;
+  background-size: 25px 25px;
+  background-position: 3px 10px;
+  border: none;
+  border-right: 1px solid black;
+}
+
+.input-third-container input {
+  width: 350px;
+  background: url(/images/utente.png?fbcb7480d9b981dbc72f55861b14b96f) no-repeat;
+  padding-left: 35px;
+  background-size: 25px 25px;
+  background-position: 3px 10px;
+  border: none;
+  border-right: 1px solid black;
+}
+
+input:hover {
+  background-color: #e9e0e0;
+}
+
+.cities-container img {
+  width: 200px;
+}
+
+.img-box {
+  padding-bottom: 15px;
+}
+
+.text-box {
+  padding: 15px;
+}
+
+.cities-container {
+  display: flex;
+  align-items: center;
+}
+
+.section-struttura {
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+
+.bg-show {
+  color: black;
 }
 
 .bg-show .apartment-container-img img {
@@ -12488,17 +12608,13 @@ footer .footer-container {
   margin-right: 5px;
 }
 
-.bg-show .apartment-container-img img {
-  border-radius: 50px;
-}
-
 #bg-create form {
-  color: white;
+  color: black;
 }
 
 #bg-create form .form-group {
   position: relative;
-  color: white;
+  color: black;
 }
 
 #bg-create form .form-group button {
@@ -12506,12 +12622,12 @@ footer .footer-container {
 }
 
 #bg-create form .form-group .form-control {
-  color: white;
+  color: black;
   width: 100%;
   padding: 10px;
   outline: 0;
   border: 1px solid #6d6d6d;
-  background: transparent;
+  background: white;
   font-size: 15px;
 }
 

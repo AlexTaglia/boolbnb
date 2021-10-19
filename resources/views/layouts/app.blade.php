@@ -28,10 +28,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md  shadow-sm">
             <div class="container">
-                <img class="logo" src="../img/airbnb_logo_detail.jpeg" alt="BoolBnB" style="height:70px">
-                <h4 class="text-nav">BoolBnB</h4>
-
-                
+             
+                <a href="{{route('home')}}" class="d-flex">
+                    <img class="logo" src="../img/airbnb_logo_detail.jpeg" alt="BoolBnB" style="height:70px">
+                    <h4 class="text-nav">BoolBnB</h4>
+               </a> 
+              
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -46,6 +48,9 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
+                        <li class="global-icon">
+                            <i class="fas fa-globe"></i>
+                        </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('apartment.create') }}">{{ __('Diventa un host') }}</a>
                             </li>
@@ -60,7 +65,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <span>{{ Auth::user()->name }}</span>
+                                    <span class="auth-text">{{ Auth::user()->name }}</span>
                                     
                                     <img class="img-user" src="{{ Auth::user()->img }}" alt="picture of {{ Auth::user()->name }}">
                                 </a>
@@ -110,12 +115,32 @@
     font-weight:800;
     font-size: 25px;
     padding-left:10px;
+    padding-top: 15px;
 }
 
-.container .logo{
+ .logo{
     width:70px;
+    
+}
+.global-icon{
+    margin-top: 10px;
 }
 nav{
     color:white;
 }
+.nav-item:hover{
+    color:white;
+    font-size: 16px;
+}
+a{
+    text-decoration: beige;
+}
+.auth-text{
+    color:white;
+}
+a{
+    color:white;
+}
+
+
 </style>
