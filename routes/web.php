@@ -30,3 +30,7 @@ Route::get('/message', 'MessageController@index');
 
 Route::resource('messages', 'MessageController');
 
+// braintree
+Route::get('/payment/process/', 'PaymentsController@index')->name('payment.process');
+// Route::get('/payment/{apartmentId}/process/{sponsorId}', 'PaymentsController@index')->name('payment.process');
+Route::post('/payment/subscribe/{sponsorId}/{apartmentdId}', 'PaymentsController@subscribe')->name('payment.subscribe');

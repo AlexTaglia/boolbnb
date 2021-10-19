@@ -123,7 +123,8 @@ class ApartmentController extends Controller
     public function show($id)
     {
         $apartment = Apartment::find($id);
-        return view('apartment.show', compact('apartment'));
+        $sponsors = Sponsor::all();
+        return view('apartment.show', compact('apartment', 'sponsors'));
     }
 
     /**

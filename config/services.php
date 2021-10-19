@@ -29,5 +29,11 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'braintree' => [ 
+        // 'model' => App\User::class, 
+        'env' => env('BTREE_ENV'), 
+        'merchant_id' => env('BTREE_MERCHANT_ID'), 
+        'key' => env('BTREE_PUBLIC_KEY'), 
+        'secret' => env('BTREE_PRIVATE_KEY'), ],
 
 ];
