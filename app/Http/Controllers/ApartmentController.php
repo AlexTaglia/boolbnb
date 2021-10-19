@@ -74,6 +74,7 @@ class ApartmentController extends Controller
         // dd($request);
         $data = $request->all();
         $apartment = new Apartment;
+        $sponsors = Sponsor::all();
 
         $apartment->title = $data['title'];  
         $apartment->n_beedroom = $data['n_beedroom'];  
@@ -108,7 +109,7 @@ class ApartmentController extends Controller
             $apartment->sponsor()->sync($data['sponsors']);
         }
 
-        return view('apartment.show', compact('apartment'));
+        return view('apartment.show', compact('apartment' , 'sponsors'));
 
 
     }
