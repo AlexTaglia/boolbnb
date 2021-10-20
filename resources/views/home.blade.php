@@ -50,7 +50,7 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 card" >
     
         <a href="{{ route('apartment.show', $apartment)}}">
-          <img src="{{ $apartment->img }}" alt="{{ $apartment->title}}">
+          <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
         </a>
        
     
@@ -82,7 +82,7 @@
 
                   <div class="card-body">
                       <a href="{{ route('apartment.show', $apartment)}}">
-                        <img src="{{ $apartment->img }}" alt="{{ $apartment->title}}">
+                        <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
                       </a>
                       
                      <h5>

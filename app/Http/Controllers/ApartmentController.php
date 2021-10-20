@@ -109,6 +109,7 @@ class ApartmentController extends Controller
             $apartment->sponsor()->sync($data['sponsors']);
         }
 
+
         return view('apartment.show', compact('apartment', 'sponsors'));
 
 

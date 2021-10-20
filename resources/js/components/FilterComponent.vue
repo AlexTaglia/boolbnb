@@ -20,7 +20,7 @@
                 
                 <h3 >{{apartment.title}} </h3>
                 <div class="img-cont mb-3">
-                    <img :src="apartment.img"  :alt="apartment.title">
+                    <img :src=" `storage/${apartment.img}`"  :alt="apartment.title">
                 </div>
                       
                 <h5>
