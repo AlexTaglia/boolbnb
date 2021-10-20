@@ -2,7 +2,8 @@
     <div class="container">
         <div class="row justify-content-center">
             
-            <input class="col-md-6 mt-4" type="text" name="title" id="title" v-model="title">
+            <input class="col-md-6 mt-4" type="text" name="title" id="title" @keyup="geocode()"  v-model="title">
+
             <div class="container-fluid">
                 <h1>Ricerca per servizi:</h1>
                 <div class="row justify-content-center p-3">
@@ -54,42 +55,124 @@
                 selectedServices: [],
                 title: '',
                 filteredApartments: [],
+                tt: window.tt,
+                key: 'K35TCsKGW4huvzCAhYmRLYjgHewqTyhe',
+                long: '',
+                lat:'',
+                position:'',
+                closeApartments: [],
+                limit : ''
             }
+        },
+
+        mounted() {
+            // this.geocode();
         },
         computed: {
             
             results(){
-                if(this.selectedServices.length > 0) {
+                // if(this.filteredApartments.length > 0){
 
-                    this.filteredApartments = [];
+                    if(this.selectedServices.length > 0) {
+                        this.filteredApartments = [];
 
-                    this.apartments.forEach(apartment => {
+                        if (this.closeApartments.length > 0){
 
-                        let oneApartment = this.apartmentservices.filter(el => el.apartment_id == apartment.id);
+                            this.closeApartments.forEach(apartment => {
+                                let oneApartment = this.apartmentservices.filter(el => el.apartment_id == apartment.id);
+                                let onseApartmentServices = [];
+                                oneApartment.forEach(el => {
+                                    onseApartmentServices.push(el.service_id);
+                                });
+        
+                                if (this.selectedServices.every(el => onseApartmentServices.includes(el)) && !this.filteredApartments.includes(apartment.id)) {
+                                    this.filteredApartments.push(apartment);
+                                }
+                                
+                            });
 
-                        let onseApartmentServices = [];
-
-                        oneApartment.forEach(el => {
-                            
-                            onseApartmentServices.push(el.service_id);
-                        });
-
-                        if (this.selectedServices.every(el => onseApartmentServices.includes(el)) && !this.filteredApartments.includes(apartment.id)) {
-                            this.filteredApartments.push(apartment);
+                        } else {
+                            this.apartments.forEach(apartment => {
+                                let oneApartment = this.apartmentservices.filter(el => el.apartment_id == apartment.id);
+                                let onseApartmentServices = [];
+                                oneApartment.forEach(el => {
+                                    onseApartmentServices.push(el.service_id);
+                                });
+        
+                                if (this.selectedServices.every(el => onseApartmentServices.includes(el)) && !this.filteredApartments.includes(apartment.id)) {
+                                    this.filteredApartments.push(apartment);
+                                }
+                            });
                         }
-                        
-                    });
 
-                    return this.filteredApartments;
-                    
-                } else {
-                    return this.apartments;
-                }
-            }
+                        return this.filteredApartments;
+                        
+                    } else {
+                        if(this.closeApartments.length > 0){
+                            return this.closeApartments;
+                        } else {
+                            return this.apartments;
+                        }
+                    }
+
+                // } else {
+                //     console.log('apartments')
+                //     return this.apartments
+                // }
+            },
+
         },
         methods:{
             
-        },
+            geocode(){
+                console.log('geocode start');
+                this.tt.services.geocode({
+                key: this.key,
+                query: this.title,
+                // limit: this.limit,
+                // }).then(this.checkRadius(response.results[0].position))
+                }).then((response)=>{
+                    // this.lat = (response.results[0].position.lat)
+                    // this.long = (response.results[0].position.lng)
+                    // console.log(this.lat, this.long);
+                    this.checkRadius(response);
+                })
+
+            },
+
+            checkRadius(response){
+                // console.log(response);
+                console.log('checkRadius');
+                // console.log(response.results[0].position.lat, response.results[0].position.lng);
+                this.closeApartments = [];
+                this.apartments.forEach((apartment) => {
+                    if (this.getDistanceFromLatLonInKm(response.results[0].position.lat, response.results[0].position.lng, apartment.lat, apartment.long) < 1000) {
+                        this.closeApartments.push(apartment);
+                }
+                });
+
+                console.log(this.closeApartments);
+            },
+
+            getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+                var R = 6371; // Radius of the earth in km
+                var dLat = this.deg2rad(lat2-lat1);  // deg2rad below
+                var dLon = this.deg2rad(lon2-lon1); 
+                var a = 
+                    Math.sin(dLat/2) * Math.sin(dLat/2) +
+                    Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) * 
+                    Math.sin(dLon/2) * Math.sin(dLon/2); 
+                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+                var d = R * c; // Distance in km
+                
+                return d;
+            },
+
+            deg2rad(deg) {
+                return deg * (Math.PI/180)
+            },
+
+        }
     }
 </script> 
 

@@ -11,7 +11,7 @@
       <img src="../images/bird1.png"  id="bird1">
       <img src="../images/bird2.png"  id="bird2">
       <img src="../images/forest.png"  id="forest">
-      <a href="#" id="btn">Explore</a>
+      <a href="{{route('search')}}" id="btn">Explore</a>
       <img src="../images/rocks.png"  id="rocks">
       <img src="../images/water.png"  id="water">
   </div>
@@ -42,23 +42,12 @@
         @foreach ($allApartments as $apartment)
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 
-              <div class="card mb-3">
-                  <div class="card-header">
-                  
-                    <h4>
-                      {{ $apartment->title}}
-                   </h4> 
-                  </div>
+            <div class="card mb-3">
 
-                  <div class="card-body">
-                      <a href="{{ route('apartment.show', $apartment)}}">
-                        <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
-                      </a>
-
-                      
-                <h3>
+              <div class="card-header">
+                <h4>
                   {{ $apartment->title}}
-                </h3> 
+                </h4> 
               </div>
 
               <div class="card-body">
@@ -86,6 +75,7 @@
                     </strong>
                 </h5>
               </div>
+
               <div class="buttons">
                 <a href="{{ route('apartment.show', $apartment) }}">
                   <button class="btn btn-warning">
@@ -97,6 +87,7 @@
           </div>
         @endforeach
       </div>
+
       <div>
         {!! $allApartments->links()!!}
       </div>
