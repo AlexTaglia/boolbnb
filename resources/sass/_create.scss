@@ -1,6 +1,18 @@
+   button{
+    background-color: rgb(255,90,96);
+    padding:15px;
+    border-radius: 50%;
+    border:none;
+    color:white;
+   } 
+    button:hover{
+ 
+        color: black;
+
+}
 
     #bg-create{
-    
+      
         form{
             color: black;
             .form-group{
@@ -9,8 +21,9 @@
                 color: black;
                 button{
                     width: 100%;
+                    
                 }
-    
+                
                 .form-control{
                     color: black;
                     width: 100%;

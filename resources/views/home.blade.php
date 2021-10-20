@@ -3,30 +3,8 @@
 @section('content')
 <div class="prova-bg">
 <div class="home-container-fluid">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 info-covid-box d-flex align-items-center justify-content-center ">
-        <a href="http://www.viaggiaresicuri.it/">
-          <h6>Scopri le informazioni più recenti sulla nostra risposta all'emergenza COVID-19</h6>
-        </a>
-      </div>
-    </div>
-  </div>
+
       <header class="container">
-        <div class="row">
-          <ul class="nav justify-content-center col-12">
-            <li class="nav-item navbar hover">
-              <a class="nav-link active" aria-current="page" href="#">Alloggi</a>
-            </li>
-            <li class="nav-item navbar hover">
-              <a class="nav-link" href="#">Esperienze</a>
-            </li>
-            <li class="nav-item navbar hover">
-              <a class="nav-link" href="#">Esperienze online</a>
-            </li>
-            
-          </ul>
-        </div>
         
         <div class="row">
           <div class="col-12 text-center search-box">
@@ -97,9 +75,9 @@
               <div class="card mb-3">
                   <div class="card-header">
                   
-                    <h3>
+                    <h4>
                       {{ $apartment->title}}
-                   </h3> 
+                   </h4> 
                   </div>
 
                   <div class="card-body">
@@ -153,7 +131,9 @@
 @endsection
 
 <style>
-
+.card-header{
+  height:100px;
+}
   input{
     width: 500px;
     height:50px;
@@ -170,8 +150,11 @@
  background-color : white; 
  
  }
+ h1{
+   color:black;
+ }
  .search-box{
-   padding-top: 200px;
+   padding-top: 250px;
  }
   .search-box button{
      height:50px;
@@ -290,7 +273,6 @@ box-shadow: none!important;
  a:hover, a:visited, a:link, a:active
  {
    text-decoration: none!important;
- 
  -webkit-box-shadow: none!important;
  box-shadow: none!important;
  }

@@ -11,7 +11,7 @@
           <h2>I miei appartamenti:</h2>
           <div class="mb-2">
             <a href="{{ route('apartment.create') }}">
-              <button class="btn btn-primary">
+              <button class="btn-index">
                 <i class="bi bi-arrow-right-square">Add Appartment</i>
               </button>
             </a>
