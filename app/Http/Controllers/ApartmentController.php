@@ -9,6 +9,8 @@ use App\Sponsor;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ApartmentController extends Controller
 {
@@ -126,7 +128,16 @@ class ApartmentController extends Controller
     {
         $apartment = Apartment::find($id);
         $sponsors = Sponsor::all();
-        return view('apartment.show', compact('apartment', 'sponsors'));
+        $now = Carbon::now();
+        $lastSponsorDate = DB::table('apartment_sponsor')
+                        ->select('end_on')
+                        ->where('apartment_id', '=', $id)
+                        ->where('end_on', '>=', $now)
+                        ->orderBy('end_on', 'DESC')     
+                        ->limit(1)
+                        ->first();
+
+        return view('apartment.show', compact('apartment', 'sponsors', 'now', 'lastSponsorDate'));
     }
 
     /**

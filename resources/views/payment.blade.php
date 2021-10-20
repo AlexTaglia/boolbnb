@@ -20,7 +20,12 @@
        <div class="row justify-content-center">
        <div class="col-md-8 col-md-offset-2">
          <div id="dropin-container"></div>
-         <button id="submit-button">Request payment method</button>
+         <button class="btn btn-success" id="submit-button">Esegui pagamento</button>
+         <a href="{{route('apartment.show', $apartmentdId)}}">
+           <button class="btn btn-primary">
+             Torna all'appartamento
+           </button>
+         </a>
        </div>
      </div>
   </div>
