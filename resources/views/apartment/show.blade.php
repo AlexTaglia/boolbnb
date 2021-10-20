@@ -40,22 +40,24 @@
             </div>   
             <hr>
             <div>
-                <ul> Sponsor:
-                    @foreach($apartment->sponsor as $sponsor)
-                    <li>
-                        {{$sponsor->name}}
-                    </li>
-                    @endforeach
+                <ul> Sponsor: 
+                        @foreach($apartment->sponsor as $sponsor)
+                            <li v-if="`{{ $lastSponsorDate->end_on > $now}}`">  {{--ToDo Sistemare lastSponsorDate--}}
+                                {{$sponsor->name}}
+                            </li>
+                        @endforeach
                 </ul>   
+            <hr>                 
             </div> 
+        </div> 
 
-        </div>         
-        <div class="col-md-10">
-            <div class="row cont-description">
-                <h3  class="p-4 col-md-12">Descrizione Appartamento</h3>
-                <div class="col-md-6">
-                    <ul>
-
+        
+     <div class="col-md-10">
+        <div class="row cont-description">
+            <h3  class="p-4 col-md-12">Descrizione Appartamento</h3>
+            <div class="col-md-6">
+                <ul>
+                    
                         <li>
                             <i class="bi bi-house-fill"></i>  N.di stanze: {{ $apartment->n_beedroom}}
                         </li>
@@ -77,7 +79,7 @@
                             <i class="bi bi-geo-alt"></i> Indirizzo: {{ $apartment->address}}
                         </li>
                         <li>
-                           <i class="bi bi-moon-stars-fill"></i>  Prezzo a notte: {{ $apartment->price_per_night}} 
+                            <i class="bi bi-moon-stars-fill"></i>  Prezzo a notte: {{ $apartment->price_per_night}} 
                         </li>
                     </ul>
                 </div>
@@ -105,23 +107,21 @@
                 </div>
                 @endforeach
             </div>
-
-            <div>Aggiungi sponsorizzazione:
-                @foreach($sponsors as $sponsor)
-                <div>
-                    <a href="{{ route('payment.process', [$sponsor->id, $apartment->id])}}">
-                        <span>
-                            {{$sponsor->name}} - 
-                        </span>
-                        <span>
-                            € {{$sponsor->price}} - 
-                        </span>
-                        <span>
-                            gg {{$sponsor->duration}}
-                        </span>
-                    </a>    
+            
+            <div class='row cont-description'>
+                <h3 class="p-4 col-md-12">Aggiungi sponsorizzazione:</h3>
+                <div class="col-md-12">
+                    <p class="text-secondary">Scandenza sponsor il: {{ $lastSponsorDate->end_on }}</p>
+                    @foreach($sponsors as $sponsor)
+                    <div>
+                        <a href="{{ route('payment.process', [$sponsor->id, $apartment->id])}}">
+                            <span>{{$sponsor->name}} - </span>
+                            <span>€: {{$sponsor->price}} - </span>
+                            <span>{{$sponsor->duration}} ore</span>
+                        </a>      
+                    </div>
+                    @endforeach
                 </div>
-                @endforeach
             </div>
 
         </div>
