@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <header id="header">
   
 </header>
@@ -15,14 +16,13 @@
       <img src="../images/water.png"  id="water">
   </div>
   <div class="sec">
-    {{--inizio prova --}}
+    
     <div class="container explore-cities mb-4">
       <div class="row">
         <div class="col-12">
           <h1>Esplora i dintorni</h1>
         </div>
       </div>
-
       <div class="row">
         @foreach ($visibleApartments as  $apartment)
 
@@ -36,13 +36,25 @@
         @endforeach
       </div>
     </div>
-    {{--fine prova prima parte--}}
+    
     <div class="container">
       <div class="row justify-content-center">
         @foreach ($allApartments as $apartment)
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-            <div class="card mb-3">
-              <div class="card-header">
+
+              <div class="card mb-3">
+                  <div class="card-header">
+                  
+                    <h4>
+                      {{ $apartment->title}}
+                   </h4> 
+                  </div>
+
+                  <div class="card-body">
+                      <a href="{{ route('apartment.show', $apartment)}}">
+                        <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
+                      </a>
+
                       
                 <h3>
                   {{ $apartment->title}}
@@ -116,7 +128,9 @@
 </script>
 
 <style>
-
+.card-header{
+  height:100px;
+}
   input{
     width: 500px;
     height:50px;
@@ -133,8 +147,11 @@
  background-color : white; 
  
  }
+ h1{
+   color:black;
+ }
  .search-box{
-   padding-top: 200px;
+   padding-top: 250px;
  }
   .search-box button{
      height:50px;
@@ -253,7 +270,6 @@ box-shadow: none!important;
  a:hover, a:visited, a:link, a:active
  {
    text-decoration: none!important;
- 
  -webkit-box-shadow: none!important;
  box-shadow: none!important;
  }

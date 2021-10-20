@@ -25,9 +25,20 @@
 @import 'create';
 
 #app{
+    
+    .black-info{
+        height: 50px;
+        background-color: rgb(88, 85, 85);
+        color:grey;
+        display: flex;
+        align-items:center;
+        justify-content: center;
 
+        a{
+            color:lightgrey;
+        }
+    }
     .navbar{
-        
 
         .collapse{
     
