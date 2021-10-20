@@ -11,12 +11,13 @@
             box-shadow: 5px 5px 10px $lightGray;
             overflow: hidden;
             tr{
-                background: #ffffffa8;
+                background: #fffafaec;
             }
             .cont-table{
-                color: white;
+                color: black;
                 font-size: 15px;
-                background: #00000070;
+                background: #eceaeaf5;
+
                 thead{
                     vertical-align: top;
                     background-color: $lightGray;
