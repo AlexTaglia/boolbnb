@@ -27,6 +27,7 @@
 </head>
 <body>
     <div id="app">
+
         <div class="container-fluid black-info">
             <div class="row">
               <div class="col-12 info-covid-box d-flex align-items-center justify-content-center ">
@@ -41,6 +42,7 @@
             <div class="container-fluid">
                 <a href="{{route('home')}}" class="d-flex navbar-brand">
                     <img class="logo" src="../img/airbnb_logo_detail.jpeg" alt="BoolBnB" style="height:70px">
+
                     <h4 class="text-nav">BoolBnB</h4>
                </a> 
             
@@ -110,12 +112,6 @@
             @yield('content')
         </main>
 
-        <main class="py-4">
-            @yield('prova-text')
-        </main>
-        <main class="py-4">
-            @yield('ciccio')
-        </main>
         <footer>
             @include('layouts.footer')
         </footer>
@@ -130,24 +126,29 @@
 <style> 
 
      .text-nav{
+
     color: rgb(255,90,96);
     font-weight:900;
+
     font-size: 25px;
     padding-left:10px;
     padding-top: 15px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
- .logo{
-    width:70px;
-    
+.container-logo img{
+    width: 100%;
+    height: 40px;
 }
+
 .global-icon{
     margin-top: 10px;
  
 }
 nav{
+
     color:rgb(255,90,96);
+
 
 }
 .nav-item:hover{
@@ -157,6 +158,7 @@ nav{
 
 
 a{
+
     color:wrgb(255,90,96)
 }
 

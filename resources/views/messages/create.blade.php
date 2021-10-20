@@ -3,8 +3,8 @@
             <form class="contact-form row" action="{{route('messages.store')}}" method='post' enctype="multipart/form-data">
                 @csrf
                 <div class="form-field col-lg-6">
-                    <label for="sender_name" class="label pb-2">{{$apartment->title}}</label>
-                    <input class="input-text js-input"  name="apartment_id" id="apartment_id" maxlength="255" value="{{ $apartment-> id }}" readonly>
+                    <label for="sender_id" class="label pb-2">{{$apartment->title}}</label>
+                    <input class="input-text js-input" type="hidden"  name="sender_id" id="sender_id" maxlength="255" value="{{ $apartment-> id }}" readonly>
                 </div>
                 <div class="form-field col-lg-6">
                     <label for="sender_name" class="label pb-2">Inserire il nome:</label>

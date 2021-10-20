@@ -130,7 +130,6 @@
 
             @endauth
             <div>
-                <h1>Contact host:</h1>
                 <section>
                     @include('messages.create')
                 </section>
