@@ -1,156 +1,119 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="prova-bg">
-<div class="home-container-fluid">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 info-covid-box d-flex align-items-center justify-content-center ">
-        <a href="http://www.viaggiaresicuri.it/">
-          <h6>Scopri le informazioni più recenti sulla nostra risposta all'emergenza COVID-19</h6>
-        </a>
+<header id="header">
+  
+</header>
+<div class="container-bg">
+  <div class="body-cont">
+      <h2 id="text"><span>It's a time for a new</span><br>Adventure</h2>
+      <img src="../images/bird1.png"  id="bird1">
+      <img src="../images/bird2.png"  id="bird2">
+      <img src="../images/forest.png"  id="forest">
+      <a href="#" id="btn">Explore</a>
+      <img src="../images/rocks.png"  id="rocks">
+      <img src="../images/water.png"  id="water">
+  </div>
+  <div class="sec">
+    {{--inizio prova --}}
+    <div class="container explore-cities mb-4">
+      <div class="row">
+        <div class="col-12">
+          <h1>Esplora i dintorni</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        @foreach ($visibleApartments as  $apartment)
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 card" >
+        
+          <a href="{{ route('apartment.show', $apartment)}}">
+            <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
+          </a>
+      
+        </div>
+        @endforeach
       </div>
     </div>
-  </div>
-      <header class="container">
-        <div class="row">
-          <ul class="nav justify-content-center col-12">
-            <li class="nav-item navbar hover">
-              <a class="nav-link active" aria-current="page" href="#">Alloggi</a>
-            </li>
-            <li class="nav-item navbar hover">
-              <a class="nav-link" href="#">Esperienze</a>
-            </li>
-            <li class="nav-item navbar hover">
-              <a class="nav-link" href="#">Esperienze online</a>
-            </li>
-            
-          </ul>
-        </div>
-        
-        <div class="row">
-          <div class="col-12 text-center search-box">
-           <input type="text" placeholder="Dove vuoi andare?">
-
-           <a href="{{ route('search')}}"><button><i class="fas fa-search"></i></button></a>
-           
-          </div>
-       </div>     
-
-     {{-- <div class="row">
-       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center header-text">
-         <h4>Non sai dove andare? Nessun problema!</h4>
-         <a href="">
-           <button>
-             <span>Sono flessibile</span>
-           </button>
-         </a>
-         
-       </div>
-     </div> --}}
-       
-      </header>
-   
-</div>
-</div>
-
-
-@endsection
-
-@section('prova-text')
-
-<div class="container explore-cities">
-  <div class="row">
-    <div class="col-12">
-      <h1>Esplora i dintorni</h1>
-    </div>
-  </div>
-
-  <div class="row">
-    @foreach ($visibleApartments as  $apartment)
-
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 card" >
-    
-        <a href="{{ route('apartment.show', $apartment)}}">
-          <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
-        </a>
-       
-    
-    </div>
-    
-      
-    @endforeach
-   
-    
-  </div>
-  
-
-</div>
-@endsection
-
-@section('ciccio')
-<div class="container">
-  <div class="row justify-content-center">
-    
-      @foreach ($allApartments as $apartment)
+    {{--fine prova prima parte--}}
+    <div class="container">
+      <div class="row justify-content-center">
+        @foreach ($allApartments as $apartment)
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-              <div class="card mb-3">
-                  <div class="card-header">
-                  
-                    <h3>
-                      {{ $apartment->title}}
-                   </h3> 
-                  </div>
-
-                  <div class="card-body">
-                      <a href="{{ route('apartment.show', $apartment)}}">
-                        <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
-                      </a>
+            <div class="card mb-3">
+              <div class="card-header">
                       
-                     <h5>
-                      {{ $apartment->n_beds}} camera da letto
-                    </h5> 
-
-                    <h5>
-                      {{ $apartment->n_bathrooms}} bagno
-                    </h5>
-                     <h5>
-                      {{ $apartment->square_meters}} mq
-                     </h5>
-                     <h5>
-                      Indirizzo: {{ $apartment->address}}
-                     </h5>
-                      
-                      <h5>
-                          Prezzo a notte:
-                          <strong>
-                              € {{ $apartment->price_per_night}}     
-                          </strong>
-                          
-                      </h5>
-                    
-                  </div>
-
-                  <div class="buttons">
-                      <a href="{{ route('apartment.show', $apartment) }}">
-                          <button class="btn btn-warning">
-                              <i class="bi bi-zoom-in"></i>
-                          </button>
-                      </a>
-                  </div>
-                  
-
+                <h3>
+                  {{ $apartment->title}}
+                </h3> 
               </div>
+
+              <div class="card-body">
+                <a href="{{ route('apartment.show', $apartment)}}">
+                  <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
+                </a>
+                          
+                <h5>
+                  {{ $apartment->n_beds}} camera da letto
+                </h5> 
+
+                <h5>
+                  {{ $apartment->n_bathrooms}} bagno
+                </h5>
+                <h5>
+                  {{ $apartment->square_meters}} mq
+                </h5>
+                <h5>
+                  Indirizzo: {{ $apartment->address}}
+                </h5>
+                <h5>
+                  Prezzo a notte:
+                    <strong>
+                      € {{ $apartment->price_per_night}}     
+                    </strong>
+                </h5>
+              </div>
+              <div class="buttons">
+                <a href="{{ route('apartment.show', $apartment) }}">
+                  <button class="btn btn-warning">
+                    <i class="bi bi-zoom-in"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
           </div>
-      @endforeach
+        @endforeach
+      </div>
       <div>
         {!! $allApartments->links()!!}
       </div>
+  
+    </div>
   </div>
-
-
 </div>
+
 @endsection
+
+<script>
+  
+  document.addEventListener('scroll', function(){
+
+    var value = window.scrollY;
+
+    text.style.top = 30 + value * -0.5 + '%';
+    bird1.style.top = value * -1.5 + 'px';
+    bird1.style.left = value * 2 + 'px';
+    bird2.style.top = value * -1.5 + 'px';
+    bird2.style.left = value * -5 + 'px';
+    btn.style.marginTop = value * 1.5 + 'px';
+    rocks.style.top = value * -0.12 + 'px';
+    forest.style.top = value * 0.25 + 'px';
+    header.style.top = value * 0.5 + 'px'
+
+
+  })
+</script>
 
 <style>
 

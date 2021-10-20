@@ -30,7 +30,10 @@
             <div class="container">
              
                 <a href="{{route('home')}}" class="d-flex">
-                    <img class="logo" src="../img/airbnb_logo_detail.jpeg" alt="BoolBnB" style="height:70px">
+                    <div class="container-logo">
+                        <img class="logo" src="../images/finalmente-png.png" alt="picture logo BoolBnB" >
+
+                    </div>
                     <h4 class="text-nav">BoolBnB</h4>
                </a> 
               
@@ -92,12 +95,6 @@
             @yield('content')
         </main>
 
-        <main class="py-4">
-            @yield('prova-text')
-        </main>
-        <main class="py-4">
-            @yield('ciccio')
-        </main>
         <footer>
             @include('layouts.footer')
         </footer>
@@ -111,22 +108,23 @@
 </html>
 <style>
      .text-nav{
-    color:white;
+    color:#094b65;
     font-weight:800;
     font-size: 25px;
     padding-left:10px;
     padding-top: 15px;
 }
 
- .logo{
-    width:70px;
-    
+.container-logo img{
+    width: 100%;
+    height: 40px;
 }
+
 .global-icon{
     margin-top: 10px;
 }
 nav{
-    color:white;
+    color:#094b65;
 }
 .nav-item:hover{
     color:white;
@@ -136,10 +134,10 @@ a{
     text-decoration: beige;
 }
 .auth-text{
-    color:white;
+    color:#094b65;
 }
 a{
-    color:white;
+    color:#094b65;
 }
 
 
