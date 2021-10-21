@@ -1,28 +1,37 @@
 <template>
-    <div class="container">
+
+    
+     <div class="container">
         <div class="row justify-content-center">
             
-            <div class="col-12">
-                <input class="col-md-6 mt-4" type="text" name="title" id="title" @keyup="geocode()"  v-model="title">
+            <div class="col-8 d-flex align-items-center input-search">
+                <input  class="col-10 border-right"  type="search" name="title" id="title" @keyup="geocode()"  v-model="title">
+                <button class="col-2" ><i class="bi bi-search"></i></button>
+               
             </div>
 
-            <div class="col-12">
-                <label for="n_room">Numero minimo di stanze</label>
-                <input name="n_room" type="number" min="1" max="6" v-model="n_room">
-                <label for="n_bed">Numero minimo di letti</label>
-                <input type="number" min="1" max="12" v-model="n_bed">
-                <label for="distanza">Distanza</label>
-                <input name="distanza" type="range" min="20" max="2000" v-model="valueKm" @change="geocode()"> <span>{{valueKm}} km</span>
+            <div class="col-12 d-flex justify-content-center align-items-center p-3 ">
+              
+                <input for="n_room" v-model="n_room" class="mr-3" name="n_room" type="number" min="1" max="16" placeholder ="N. Bagni">
+                <input  for="n_bed" v-model="n_bed" class="mr-3" name="n_bed" type="number" min="1" max="16" placeholder ="N. Camere">
+                <div class="km-input d-flex align-items-center"> 
+                     <label class="mr-3" for="distanza">Distanza</label>
+                    <input v-model="valueKm" @change="geocode()" name="distanza" type="range" min="5" max="2000"> <span class="p-3">km</span>
+                </div>
             </div>
 
             <div class="container-fluid">
-                <h1>Ricerca per servizi:</h1>
-                <div class="row justify-content-center p-3">
-                    <div class="col-4 d-flex justify-content-center " v-for="service in services" :key="service.id">
-                        <label class="p-1" :for="service.name">{{ service.name }}</label>
-                        <input type="checkbox" :name="service.name" :id="service.name" :value="service.id" v-model="selectedServices">
+                <h3>Aggiungi dei Servizi:</h3>
+            
+                    <div class="col-4 d-flex">
+                       
+                            <div class="d-flex p-2" v-for="service in services" :key="service.id">
+                                <label class="p-1 text-nowrap":for="service.name">{{ service.name }}</label>
+                                <input type="checkbox" :name="service.name" :id="service.name" :value="service.id" v-model="selectedServices">
+                            </div>
+                       
                     </div>
-                </div>
+              
             </div>
 
         </div>
@@ -30,43 +39,59 @@
         <h1>Risultato:</h1>
 
         <div class="row justify-content-center">
+        
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 ">
 
-            <div class="card-body " v-for="apartment in results" :key="apartment.id">
-                
-                <h3 >{{apartment.title}} </h3>
-                <div class="img-cont mb-3">
-                    <img :src=" `storage/${apartment.img}`"  :alt="apartment.title">
-                </div>
-                      
+            <div class="card mb-3 ">
+
+              <div class="card-header">
+                <h4>
+                 {{apartment.title}}
+                </h4> 
+              </div>
+
+               <div class="card-image">
+                <a href="">
+                    <img :src=" `storage/${apartment.img}`"  :alt="apartment.title">                
+                </a>
+                     
+               </div>
+              <div class="card-body">
+                    
+                <div class="card-body">
                 <h5>
-                    {{apartment.n_beds}} camera da letto
+                  <i class="bi bi-house-fill"></i>  N.di stanze: <strong>{{ apartment.n_beedroom}}</strong> 
                 </h5> 
                 <h5>
-                    {{apartment.n_bathrooms}} bagno
-                </h5>
-                <h5>
-                    {{apartment.square_meters}} mq
-                </h5>
-                <h5>
-                    Indirizzo: {{apartment.address}}
-                </h5>  
-                <h5>
-                Prezzo a notte:
-                    <strong>
-                        € {{ apartment.price_per_night}}     
-                    </strong>      
-                </h5>  
+                  <i class="bi bi-layout-sidebar-reverse"></i> Camera da letto: <strong>{{ apartment.n_beds}}</strong> 
+                </h5> 
 
-                <div class="buttons">
+                <h5>
+                  <i class="bi bi-vr"></i> Numero di Bagni: <strong>{{ apartment.n_bathrooms}}</strong>
+                </h5>
+                <h5>
+                  <i class="bi bi-app-indicator"></i> Metri quadrati: <strong>{{ apartment.square_meters}}</strong>
+                </h5>
+                <h5>
+                  <i class="bi bi-geo-alt"></i> Indirizzo: <strong>{{ apartment.address}}</strong>
+                </h5>
+                <h5>
+                <i class="bi bi-moon-stars-fill"></i>  Prezzo a notte: <strong>  € {{ apartment.price_per_night}} </strong>
+                </h5>
+              </div>
+
+              </div>
+
+              <div class="buttons">
                     <a :href="`/apartment/${apartment.id}`" target="">
                         <button class="btn btn-warning">
                             <i class="bi bi-zoom-in"></i>
                         </button>
                     </a>
                 </div>
-                
             </div>
-        </div>
+          </div>
+        <div>
     </div>
 </template>
 <script>
@@ -185,19 +210,26 @@
 </script> 
 
 <style lang="scss" scoped>
-h3{
-    height: 90px;
-    font-size: 24px;
+.input-search{
+    border:3px solid rgb(255,90,96);
+    outline:none;
+   
+    font-size:20px;
+    border-radius:50px;
+     
 }
-.img-cont{
+.input-search button{
+    border-radius:20px;
+    
+}
+input{
+    border: 0px;
+    border-bottom:1px solid lightgrey;
+    outline:none;
+    background:white;
+}
+.border-right{
+    border-right:1px solid rgb(255,90,96);
+}
 
-    img{
-        width: 100%;     
-    }
-}
-.card-body{
-    max-width: calc(100% / 3 - 10px);
-    margin: 5px;
-    border: 1px black solid;
-}
 </style>
