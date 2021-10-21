@@ -44,7 +44,7 @@
           <h1>Ispirazione per viaggi futuri</h1>
         </div>
       </div>
-      <div class="row justify-content-center">
+      <div class="row ">
         @foreach ($allApartments as $apartment)
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 ">
 
@@ -63,25 +63,24 @@
                      
                </div>
               <div class="card-body">
-                    
                 <h5>
-                  {{ $apartment->n_beds}} camera da letto
+                  <i class="bi bi-house-fill"></i>  N.di stanze: <strong>{{ $apartment->n_beedroom}}</strong> 
+                </h5> 
+                <h5>
+                  <i class="bi bi-layout-sidebar-reverse"></i> Camera da letto: <strong>{{ $apartment->n_beds}}</strong> 
                 </h5> 
 
                 <h5>
-                  {{ $apartment->n_bathrooms}} bagno
+                  <i class="bi bi-vr"></i> Numero di Bagni: <strong>{{ $apartment->n_bathrooms}}</strong>
                 </h5>
                 <h5>
-                  {{ $apartment->square_meters}} mq
+                  <i class="bi bi-app-indicator"></i> Metri quadrati: <strong>{{ $apartment->square_meters}}</strong>
                 </h5>
                 <h5>
-                  Indirizzo: {{ $apartment->address}}
+                  <i class="bi bi-geo-alt"></i> Indirizzo: <strong>{{ $apartment->address}}</strong>
                 </h5>
                 <h5>
-                  Prezzo a notte:
-                    <strong>
-                      € {{ $apartment->price_per_night}}     
-                    </strong>
+                <i class="bi bi-moon-stars-fill"></i>  Prezzo a notte: <strong>  € {{ $apartment->price_per_night}} </strong>
                 </h5>
               </div>
 
@@ -130,9 +129,15 @@
 </script>
 
 <style>
-.card-header{
-  height:100px;
-}
+  .card-header{
+    height:70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px!important;
+    margin-bottom: 5px!important;
+  }
+ 
   input{
     width: 500px;
     height:50px;
@@ -148,17 +153,21 @@
   .card-image{
     height: 200px;
   }
+  .card-image img{
+    height: 100%;
+    border-radius: 15px;
+  }
   .card-body{
     height: 250px;
   }
+  .card-home{
+    height:180px;
+    
+  }
   input[type="text"]{
  
- background-color : white; 
+  background-color : white; 
  
- }
- .card-home{
-   height:180px;
-   
  }
  h1{
    color:black;
