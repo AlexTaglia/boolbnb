@@ -95,7 +95,8 @@
                 
                 @foreach ($apartment->message as $messag )
                 <div>
-                    <div> {{$messag->sender_name}} -> {{$messag->email}}</div>
+                    <div> {{$messag->sender_name}} - {{$messag->email}}</div>
+                    <div> {{$messag->text}} </div>
 
                     <hr>
                 </div>

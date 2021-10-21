@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Apartment;
 use App\Service;
-use DB;
+// use DB;
+use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {

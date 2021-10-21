@@ -64,7 +64,7 @@
                         <i class="fas fa-globe"></i>
                     </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('apartment.create') }}">{{ __('Diventa un host') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Diventa un host') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

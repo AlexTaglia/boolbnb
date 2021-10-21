@@ -2,9 +2,19 @@
     <div class="container">
         <div class="row justify-content-center">
             
-            <input class="col-md-6 mt-4" type="text" name="title" id="title" @keyup="geocode()"  v-model="title">
+            <div class="col-12">
+                <input class="col-md-6 mt-4" type="text" name="title" id="title" @keyup="geocode()"  v-model="title">
+            </div>
 
-            <input type="range" min="20" max="2000" v-model="valueKm" @change="geocode()"> <span>{{valueKm}}</span>
+            <div class="col-12">
+                <label for="n_room">Numero minimo di stanze</label>
+                <input name="n_room" type="number" min="1" max="6" v-model="n_room">
+                <label for="n_bed">Numero minimo di letti</label>
+                <input type="number" min="1" max="12" v-model="n_bed">
+                <label for="distanza">Distanza</label>
+                <input name="distanza" type="range" min="20" max="2000" v-model="valueKm" @change="geocode()"> <span>{{valueKm}} km</span>
+            </div>
+
             <div class="container-fluid">
                 <h1>Ricerca per servizi:</h1>
                 <div class="row justify-content-center p-3">
@@ -14,9 +24,11 @@
                     </div>
                 </div>
             </div>
+
         </div>
+
         <h1>Risultato:</h1>
-        <h1>{{ this.error }}</h1>
+
         <div class="row justify-content-center">
 
             <div class="card-body " v-for="apartment in results" :key="apartment.id">
@@ -44,6 +56,14 @@
                         € {{ apartment.price_per_night}}     
                     </strong>      
                 </h5>  
+
+                <div class="buttons">
+                    <a :href="`/apartment/${apartment.id}`" target="">
+                        <button class="btn btn-warning">
+                            <i class="bi bi-zoom-in"></i>
+                        </button>
+                    </a>
+                </div>
                 
             </div>
         </div>
@@ -51,89 +71,57 @@
 </template>
 <script>
     export default {
-        props:['apartments', 'services', 'apartmentservices'],
+        props:['apartments', 'services', 'apartmentservices', 'route'],
         data(){
             return {
-                selectedServices: [],
-                title: '',
-                filteredApartments: [],
                 tt: window.tt,
                 key: 'K35TCsKGW4huvzCAhYmRLYjgHewqTyhe',
-                long: '',
-                lat:'',
-                position:'',
+                selectedServices: [],
+                filteredApartments: [],
                 closeApartments: [],
-                limit : '',
-                valueKm: 2000,
-                error: ""
+                resultsApartments:[],
+                valueKm: 300,
+                n_room: 1,
+                n_bed: 1,
+                title: '',
+                position:'',
+                long: '',
+                lat:''
             }
         },
 
-        mounted() {
-            // this.results();
-        },
         computed: {
-            
+
             results(){
-                // if(this.filteredApartments.length > 0){
+                this.filteredApartments = [];
+                this.apartments.forEach(apartment => {
 
-                    if(this.selectedServices.length > 0) {
-                        this.filteredApartments = [];
+                    if(apartment.n_beedroom >= this.n_room && apartment.n_beds >= this.n_bed){
 
-                        if (this.closeApartments.length > 0){
-
-                            this.closeApartments.forEach(apartment => {
-                                let oneApartment = this.apartmentservices.filter(el => el.apartment_id == apartment.id);
-                                let onseApartmentServices = [];
-                                oneApartment.forEach(el => {
-                                    onseApartmentServices.push(el.service_id);
-                                });
-        
-                                if (this.selectedServices.every(el => onseApartmentServices.includes(el)) && !this.filteredApartments.includes(apartment.id)) {
-                                    this.filteredApartments.push(apartment);
-                                }
-                                
-                            });
-
-                        } else {
-                            /*
-                            this.apartments.forEach(apartment => {
-                                let oneApartment = this.apartmentservices.filter(el => el.apartment_id == apartment.id);
-                                let onseApartmentServices = [];
-                                oneApartment.forEach(el => {
-                                    onseApartmentServices.push(el.service_id);
-                                });
-        
-                                if (this.selectedServices.every(el => onseApartmentServices.includes(el)) && !this.filteredApartments.includes(apartment.id)) {
-                                    this.filteredApartments.push(apartment);
-                                }
-                            });
-                            */
-
-                            // if(this.filteredApartments.length > 0){
-                            //     return this.filteredApartments;
-                            // } else {
-                                this.error = "Nessun appartamento trovato";
-                            // }
-
+                        if(this.closeApartments.includes(apartment)){
+                            this.filteredApartments.push(apartment)
                         }
 
-                        
-                    } else {
-                        if(this.closeApartments.length > 0){
-                            return this.closeApartments;
-                        } else {
-                            // return this.apartments
-                            this.error = "Nessun appartamento trovato";
-                        }
+                        this.resultsApartments = [];
+                        this.filteredApartments.forEach(apartment => {
+                            let oneApartment = this.apartmentservices.filter(el => el.apartment_id == apartment.id);
+                            let onseApartmentServices = [];
+                            oneApartment.forEach(el => {
+                                onseApartmentServices.push(el.service_id);
+                            });
+    
+                            if (this.selectedServices.every(el => onseApartmentServices.includes(el)) && !this.filteredApartments.includes(apartment.id)) {
+                                this.resultsApartments.push(apartment);
+                            }
+                        });
                     }
 
-                // } else {
-                //     console.log('apartments')
-                //     return this.apartments
-                // }
-            },
+                });
 
+                this.resultsApartments.sort(this.compare);
+                return this.resultsApartments;
+
+            },   
         },
         methods:{
             
@@ -142,11 +130,7 @@
                 this.tt.services.geocode({
                 key: this.key,
                 query: this.title,
-                // limit: this.limit,
-                // }).then(this.checkRadius(response.results[0].position))
                 }).then((response)=>{
-                    // this.lat = (response.results[0].position.lat)
-                    // this.long = (response.results[0].position.lng)
                     // console.log(this.lat, this.long);
                     this.checkRadius(response);
                 })
@@ -159,7 +143,7 @@
                 // console.log(response.results[0].position.lat, response.results[0].position.lng);
                 this.closeApartments = [];
                 this.apartments.forEach((apartment) => {
-                    if (this.getDistanceFromLatLonInKm(response.results[0].position.lat, response.results[0].position.lng, apartment.lat, apartment.long) < this.valueKm) {
+                    if (this.getDistanceFromLatLonInKm(apartment, response.results[0].position.lat, response.results[0].position.lng, apartment.lat, apartment.long) < this.valueKm) {
                         this.closeApartments.push(apartment);
                 }
                 });
@@ -167,7 +151,7 @@
                 console.log(this.closeApartments);
             },
 
-            getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+            getDistanceFromLatLonInKm(apartment, lat1, lon1, lat2, lon2) {
                 var R = 6371; // Radius of the earth in km
                 var dLat = this.deg2rad(lat2-lat1);  // deg2rad below
                 var dLon = this.deg2rad(lon2-lon1); 
@@ -177,6 +161,7 @@
                     Math.sin(dLon/2) * Math.sin(dLon/2); 
                 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
                 var d = R * c; // Distance in km
+                apartment.distance = d;
                 
                 return d;
             },
@@ -184,6 +169,16 @@
             deg2rad(deg) {
                 return deg * (Math.PI/180)
             },
+
+            compare( a, b ) {
+                if ( a.distance < b.distance ){
+                    return -1;
+                }
+                if ( a.distance > b.distance ){
+                    return 1;
+                }
+            return 0;
+            }
 
         }
     }
