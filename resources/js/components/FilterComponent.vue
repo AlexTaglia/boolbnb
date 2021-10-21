@@ -26,7 +26,7 @@
                     <div class="col-4 d-flex">
                        
                             <div class="d-flex p-2" v-for="service in services" :key="service.id">
-                                <label class="p-1 text-nowrap":for="service.name">{{ service.name }}</label>
+                                <label class="p-1 text-nowrap" :for="service.name">{{ service.name }}</label>
                                 <input type="checkbox" :name="service.name" :id="service.name" :value="service.id" v-model="selectedServices">
                             </div>
                        
