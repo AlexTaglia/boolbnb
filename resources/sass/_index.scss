@@ -1,8 +1,7 @@
 .bg-cont{
     // background-image: url(../../public/images/airbnb-plus-scaled.jpg);
-    // min-height: 100vh;
-    // background-position: center;
-    // background-size: cover;
+     min-height: 80vh;
+    
     .bg-index{
        
         .table{
@@ -11,12 +10,14 @@
             box-shadow: 5px 5px 10px $lightGray;
             overflow: hidden;
             tr{
-                background: #fffafaec;
+                background:#094b65;
+                color:#fff;
             }
             .cont-table{
                 color: black;
                 font-size: 15px;
                 background: #eceaeaf5;
+                
 
                 thead{
                     vertical-align: top;
