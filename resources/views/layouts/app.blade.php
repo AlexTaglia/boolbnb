@@ -80,8 +80,8 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                            
                                 <span class="auth-text">{{ Auth::user()->name }}</span>
-                                
-                                <img class="img-user" src="{{ Auth::user()->img }}" alt="picture of {{ Auth::user()->name }}">
+                                <img class="img-user" src="{{ asset('storage/' . Auth::user()->img) }}" alt="picture of {{ Auth::user()->name }}">
+
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

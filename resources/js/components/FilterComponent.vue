@@ -4,6 +4,7 @@
             
             <input class="col-md-6 mt-4" type="text" name="title" id="title" @keyup="geocode()"  v-model="title">
 
+            <input type="range" min="20" max="2000" v-model="valueKm" @change="geocode()"> <span>{{valueKm}}</span>
             <div class="container-fluid">
                 <h1>Ricerca per servizi:</h1>
                 <div class="row justify-content-center p-3">
@@ -15,6 +16,7 @@
             </div>
         </div>
         <h1>Risultato:</h1>
+        <h1>{{ this.error }}</h1>
         <div class="row justify-content-center">
 
             <div class="card-body " v-for="apartment in results" :key="apartment.id">
@@ -61,12 +63,14 @@
                 lat:'',
                 position:'',
                 closeApartments: [],
-                limit : ''
+                limit : '',
+                valueKm: 2000,
+                error: ""
             }
         },
 
         mounted() {
-            // this.geocode();
+            // this.results();
         },
         computed: {
             
@@ -92,6 +96,7 @@
                             });
 
                         } else {
+                            /*
                             this.apartments.forEach(apartment => {
                                 let oneApartment = this.apartmentservices.filter(el => el.apartment_id == apartment.id);
                                 let onseApartmentServices = [];
@@ -103,15 +108,23 @@
                                     this.filteredApartments.push(apartment);
                                 }
                             });
+                            */
+
+                            // if(this.filteredApartments.length > 0){
+                            //     return this.filteredApartments;
+                            // } else {
+                                this.error = "Nessun appartamento trovato";
+                            // }
+
                         }
 
-                        return this.filteredApartments;
                         
                     } else {
                         if(this.closeApartments.length > 0){
                             return this.closeApartments;
                         } else {
-                            return this.apartments;
+                            // return this.apartments
+                            this.error = "Nessun appartamento trovato";
                         }
                     }
 
@@ -146,7 +159,7 @@
                 // console.log(response.results[0].position.lat, response.results[0].position.lng);
                 this.closeApartments = [];
                 this.apartments.forEach((apartment) => {
-                    if (this.getDistanceFromLatLonInKm(response.results[0].position.lat, response.results[0].position.lng, apartment.lat, apartment.long) < 1000) {
+                    if (this.getDistanceFromLatLonInKm(response.results[0].position.lat, response.results[0].position.lng, apartment.lat, apartment.long) < this.valueKm) {
                         this.closeApartments.push(apartment);
                 }
                 });

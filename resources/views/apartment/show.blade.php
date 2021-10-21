@@ -7,12 +7,13 @@
         <div class="col-md-10 p-3">
             <div class="row justify-content-between">
                 <h1 class="p-2">{{ $apartment->title}}</h1>
-                <a href="{{ route('apartment.index') }}">
-        
-                    <button class="btn btn-primary">
-                        <i class="bi bi-arrow-left-square">Return</i>
-                    </button>
-                </a>
+                @auth
+                    <a href="{{ route('apartment.index') }}">
+                        <button class="btn btn-primary">
+                            <i class="bi bi-arrow-left-square">Return</i>
+                        </button>
+                    </a>
+                @endauth
 
             </div>
         </div>
@@ -41,22 +42,13 @@
                 <p>{{ $apartment->description}}</p>
             </div>   
             <hr>
-            <div>
-                <ul> Sponsor: 
-                        @foreach($apartment->sponsor as $sponsor)
-                            <li v-if="`{{ $lastSponsorDate->end_on > $now}}`">  {{--ToDo Sistemare lastSponsorDate--}}
-                                {{$sponsor->name}}
-                            </li>
-                        @endforeach
-                </ul>   
-            <hr>                 
-            </div> 
+        
         </div> 
 
         
      <div class="col-md-10">
         <div class="row cont-description">
-            <h3  class="p-4 col-md-12">Descrizione Appartamento</h3>
+            <h3  class="p-4 col-md-12">Dettagli</h3>
             <div class="col-md-6">
                 <ul>
                     
@@ -113,7 +105,11 @@
             <div class='row cont-description'>
                 <h3 class="p-4 col-md-12">Aggiungi sponsorizzazione:</h3>
                 <div class="col-md-12">
-                    <p class="text-secondary">Scandenza sponsor il: {{ $lastSponsorDate->end_on }}</p>
+
+                    @if (!empty($lastSponsorDate) > 0)
+                        <p>Scandenza sponsor il: {{ $lastSponsorDate->end_on }}</p>    
+                    @endif
+                    
                     @foreach($sponsors as $sponsor)
                     <div>
                         <a href="{{ route('payment.process', [$sponsor->id, $apartment->id])}}">

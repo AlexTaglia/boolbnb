@@ -20,15 +20,15 @@
     <div class="container explore-cities mb-4">
       <div class="row">
         <div class="col-12">
-          <h1>Esplora i dintorni</h1>
+          <h1>In evidenza</h1>
         </div>
       </div>
       <div class="row">
-        @foreach ($visibleApartments as  $apartment)
+        @foreach ($visibleApartments as $apartment)
 
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 card" >
         
-          <a href="{{ route('apartment.show', $apartment)}}">
+          <a href="{{ route('apartment.show', $apartment->apartment_id)}}">
             <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
           </a>
       
