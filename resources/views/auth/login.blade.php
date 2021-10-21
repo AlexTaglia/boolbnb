@@ -64,6 +64,7 @@
                                     </a>
                                 @endif
                             </div>
+                            <p class="pt-3">Non sei registrato?  <a href="{{ route('register') }}">{{ __('register') }}</a></p>
                         </div>
                     </form>
                 </div>

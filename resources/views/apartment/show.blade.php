@@ -18,12 +18,12 @@
             </div>
         </div>
         <div class="col-md-10">
-            <div class="row justify-content-center apartment-container-img">
-                <div class="row img-map">
+           
+                <div class="row img-map justify-content-center apartment-container-img">
                     <div class="col-6">
 
 
-                        <img class="img-fluid" src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
+                        <img src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
 
 
                     </div>
@@ -33,9 +33,9 @@
                     </div>
                 </div>
                 
-            </div>
+          
         </div>  
-        <div class="col-md-10">
+        <div class="col-md-10 p-4">
             <h3>Descrizione</h3>
 
             <div>
@@ -53,16 +53,17 @@
                 <ul>
                     
                         <li>
-                            <i class="bi bi-house-fill"></i>  N.di stanze: {{ $apartment->n_beedroom}}
+                            <i class="bi bi-house-fill"></i>  N.di stanze: <strong>{{ $apartment->n_beedroom}}</strong> 
+
                         </li>
                         <li>
-                            <i class="bi bi-layout-sidebar-reverse"></i> N.di letti: {{ $apartment->n_beds}}
+                            <i class="bi bi-layout-sidebar-reverse"></i> N.di letti {{ $apartment->n_beds}}
                         </li>
                         <li>
-                           <i class="bi bi-vr"></i>  Numero di Bagni: {{ $apartment->n_bathrooms}}
+                           <i class="bi bi-vr"></i>  Numero di Bagni {{ $apartment->n_bathrooms}}
                         </li>
                         <li>
-                            <i class="bi bi-app-indicator"></i> Metri quadrati: {{ $apartment->square_meters}}
+                            <i class="bi bi-app-indicator"></i> Metri quadrati {{ $apartment->square_meters}}
                         </li>
                     </ul>
                  </div>
@@ -70,14 +71,15 @@
                 <div class="col-md-6">
                     <ul>
                         <li>
-                            <i class="bi bi-geo-alt"></i> Indirizzo: {{ $apartment->address}}
+                            <i class="bi bi-geo-alt"></i> Indirizzo {{ $apartment->address}}
                         </li>
                         <li>
-                            <i class="bi bi-moon-stars-fill"></i>  Prezzo a notte: {{ $apartment->price_per_night}} 
+                            <i class="bi bi-moon-stars-fill"></i>  Prezzo a notte {{ $apartment->price_per_night}} 
                         </li>
                     </ul>
                 </div>
-            </div>     
+            </div> 
+            <hr>  
             <div class='row cont-description'>
                 <h3 class="p-4 col-md-12">Servizi</h3>
                 <div  class="col-md-6">
@@ -91,18 +93,17 @@
                 </div>
             </div> 
             @auth 
+            <hr>
             <div>
-                
+                <h3 class="p-4"> Messaggi ricevuti</h3>
                 @foreach ($apartment->message as $messag )
                 <div>
                     <div> {{$messag->sender_name}} - {{$messag->email}}</div>
                     <div> {{$messag->text}} </div>
-
-                    <hr>
                 </div>
                 @endforeach
             </div>
-            
+            <hr>
             <div class='row cont-description'>
                 <h3 class="p-4 col-md-12">Aggiungi sponsorizzazione:</h3>
                 <div class="col-md-12">
@@ -113,7 +114,7 @@
                     
                     @foreach($sponsors as $sponsor)
                     <div>
-                        <a href="{{ route('payment.process', [$sponsor->id, $apartment->id])}}">
+                        <a href="{{ route('payment.process', [$sponsor->id, $apartment->id]) }}">
                             <span>{{$sponsor->name}} - </span>
                             <span>€: {{$sponsor->price}} - </span>
                             <span>{{$sponsor->duration}} ore</span>
