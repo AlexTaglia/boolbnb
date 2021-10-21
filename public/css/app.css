@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@font-face {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Rancho&display=swap);@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;
+
+300&display=swap);@font-face {
   font-family: "bootstrap-icons";
   src: url(/fonts/vendor/bootstrap-icons/bootstrap-icons.woff2?e07b538aa51b6fa77f32828af21cb591) format("woff2"),
 url(/fonts/vendor/bootstrap-icons/bootstrap-icons.woff?7fb23f3b56a834d9dcf615b5e7c78da8) format("woff");
@@ -1389,14 +1391,6 @@ url(/fonts/vendor/bootstrap-icons/bootstrap-icons.woff?7fb23f3b56a834d9dcf615b5e
 .bi-x-lg::before { content: "\F659"; }
 .bi-safe::before { content: "\F65A"; }
 @charset "UTF-8";
-
-/*!
- * Bootstrap v4.6.0 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
-
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;
@@ -12372,6 +12366,8 @@ footer .first-text {
 .cont-login .card .card-header {
   border: 1px solid #6d6d6d;
   text-align: center;
+  background: #fff;
+  color: #094b65;
 }
 
 .cont-login .card .card-body .form-group {
@@ -12418,6 +12414,8 @@ footer .first-text {
 .cont-register .card .card-header {
   border: 1px solid #6d6d6d;
   text-align: center;
+  background: #fff;
+  color: #094b65;
 }
 
 .cont-register .card .card-body .form-group {
@@ -12454,6 +12452,77 @@ footer .first-text {
 
 .cont-register .card .card-body .form-group button {
   width: 100%;
+}
+
+.get-in-touch {
+  max-width: 800px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.get-in-touch .title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 3.2em;
+  line-height: 48px;
+  padding-bottom: 48px;
+  color: #5543CA;
+  background: #5543CA;
+  background: linear-gradient(to right, #F4524D 0%, #5543CA 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.contact-form .form-field {
+  position: relative;
+  margin: 32px 0;
+}
+
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: #5543CA;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.contact-form .input-text:focus {
+  outline: none;
+}
+
+.contact-form .input-text:focus + .label,
+.contact-form .input-text.not-empty + .label {
+  transform: translateY(-24px);
+}
+
+.contact-form .label {
+  position: absolute;
+  left: 20px;
+  bottom: 11px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #5543CA;
+  cursor: text;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: #000;
+  background-image: linear-gradient(125deg, #A72879, #064497);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  width: 200px;
+  cursor: pointer;
 }
 
 .bg-cont .bg-index .table {
@@ -12503,6 +12572,82 @@ footer .first-text {
   padding: 0 6px;
 }
 
+#header {
+  height: 60px;
+  background: white;
+}
+
+.container-bg {
+  overflow-x: hidden;
+  background: white;
+  min-height: 100vh;
+}
+
+.container-bg .body-cont {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-bg .body-cont #text {
+  position: absolute;
+  color: #094b65;
+  font-size: 10vw;
+  text-align: center;
+  font-family: "Rancho", cursive;
+}
+
+.container-bg .body-cont #text span {
+  font-size: 0.2em;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+
+.container-bg .body-cont #btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 30px;
+  background: #fff;
+  color: #094b65;
+  font-size: 1.2em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 40px;
+  transform: translateY(100px);
+}
+
+.container-bg .body-cont img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+}
+
+.container-bg .body-cont::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #094b65, transparent);
+  z-index: 10;
+}
+
+.container-bg .sec {
+  position: relative;
+  padding: 100px;
+  background: #094b65;
+}
+
 .bg-show {
   color: black;
 }
@@ -12519,6 +12664,10 @@ footer .first-text {
 .bg-show .cont-description ul li i {
   font-size: 20px;
   margin-right: 5px;
+}
+
+.bg-show a {
+  color: black;
 }
 
 button {
