@@ -24,9 +24,10 @@
         </div>
       </div>
       <div class="row">
+        {{-- mettere i margini --}}
         @foreach ($visibleApartments as $apartment)
 
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 card" >
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 card card-home" >
         
           <a href="{{ route('apartment.show', $apartment->apartment_id)}}">
             <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
@@ -38,11 +39,16 @@
     </div>
     
     <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Ispirazione per viaggi futuri</h1>
+        </div>
+      </div>
       <div class="row justify-content-center">
         @foreach ($allApartments as $apartment)
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 ">
 
-            <div class="card mb-3">
+            <div class="card mb-3 ">
 
               <div class="card-header">
                 <h4>
@@ -50,11 +56,14 @@
                 </h4> 
               </div>
 
-              <div class="card-body">
+               <div class="card-image">
                 <a href="{{ route('apartment.show', $apartment)}}">
                   <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
                 </a>
-                          
+                     
+               </div>
+              <div class="card-body">
+                    
                 <h5>
                   {{ $apartment->n_beds}} camera da letto
                 </h5> 
@@ -86,11 +95,13 @@
             </div>
           </div>
         @endforeach
+
+        <div>
+          {!! $allApartments->links()!!}
+        </div>
       </div>
 
-      <div>
-        {!! $allApartments->links()!!}
-      </div>
+     
   
     </div>
   </div>
@@ -133,10 +144,21 @@
     border-radius:100px;
     
   }
+  
+  .card-image{
+    height: 200px;
+  }
+  .card-body{
+    height: 250px;
+  }
   input[type="text"]{
  
  background-color : white; 
  
+ }
+ .card-home{
+   height:180px;
+   
  }
  h1{
    color:black;

@@ -41,7 +41,7 @@
           <nav class="navbar navbar-expand-lg navbar-light bg-light second-nav position-stick">
             <div class="container-fluid">
                 <a href="{{route('home')}}" class="d-flex navbar-brand">
-                    <img class="logo" src="../img/airbnb_logo_detail.jpeg" alt="BoolBnB" style="height:70px">
+                    <img class="logo" src="../img/finalmente-png.png" alt="BoolBnB" style="height:70px">
 
                     <h4 class="text-nav">BoolBnB</h4>
                </a> 
