@@ -49,7 +49,7 @@
               <td class="d-none d-md-table-cell">{{ $apartment->n_bathrooms}}</td>
               <td class="d-none d-lg-table-cell">{{ $apartment->square_meters}}</td>
               <td class="d-none d-md-table-cell">{{ $apartment->address}}</td>
-              <td class="d-none d-md-table-cell">{{ $apartment->price_per_night}}</td>
+              <td class="d-none d-md-table-cell">{{ $apartment->price_per_night}}€</td>
               <td>
                 <div class="buttons d-flex">
                   <!-- Show -->

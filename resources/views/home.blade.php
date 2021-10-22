@@ -27,7 +27,7 @@
         {{-- mettere i margini --}}
         @foreach ($visibleApartments as $apartment)
 
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2 card-home" >
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 card-home" >
           <a href="{{ route('apartment.show', $apartment->apartment_id)}}">
             <div class="cont-card-home">
               
@@ -159,6 +159,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 15px;
   }
   .card-image{
     height: 200px;

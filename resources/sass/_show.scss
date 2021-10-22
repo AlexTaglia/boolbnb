@@ -24,6 +24,37 @@
                 }
             }
         }
+        .cont-service{
+            span{
+                color: white;
+                padding: 10px;
+                border-radius: 20px;
+                background-color:rgba(255, 90, 96, 0.87);
+                margin-left: 5px;
+                margin: 0 5px;
+            }
+        }
+        .silver{
+            width: fit-content;
+            background: rgb(212, 210, 210);
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 20px;
+        }
+        .gold{
+            width: fit-content;
+            background: goldenrod;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 20px;
+        }
+        .platinum{
+            width: fit-content;
+            background:rgb(122, 121, 121);
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 20px;
+        }
     }
 
     a{
