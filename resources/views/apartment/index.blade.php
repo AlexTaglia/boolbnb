@@ -22,15 +22,14 @@
       
           <thead>
             <tr>
-              
               <th scope="col">Immagine</th>
               <th scope="col">Titolo</th>
-              <th scope="col">Stanze</th>
-              <th scope="col">Letti</th>
-              <th scope="col">Bagni</th>
-              <th scope="col">Metri quadrati</th>
-              <th scope="col">Indirizzo</th>
-              <th scope="col">Prezzo /notte</th>
+              <th class="d-none d-md-table-cell" scope="col">Stanze</th>
+              <th class="d-none d-md-table-cell" scope="col">Letti</th>
+              <th class="d-none d-md-table-cell" scope="col">Bagni</th>
+              <th class="d-none d-lg-table-cell" scope="col">Metri quadrati</th>
+              <th class="d-none d-md-table-cell" scope="col">Indirizzo</th>
+              <th class="d-none d-md-table-cell" scope="col">Prezzo /notte</th>
               <th scope="col">Actions</th>
             </tr>
           </thead>
@@ -45,12 +44,12 @@
 
               </td>
               <td>{{ $apartment->title}}</td>
-              <td>{{ $apartment->n_beedroom}}</td>
-              <td>{{ $apartment->n_beds}}</td>
-              <td>{{ $apartment->n_bathrooms}}</td>
-              <td>{{ $apartment->square_meters}}</td>
-              <td>{{ $apartment->address}}</td>
-              <td>{{ $apartment->price_per_night}}</td>
+              <td class="d-none d-md-table-cell">{{ $apartment->n_beedroom}}</td>
+              <td class="d-none d-md-table-cell">{{ $apartment->n_beds}}</td>
+              <td class="d-none d-md-table-cell">{{ $apartment->n_bathrooms}}</td>
+              <td class="d-none d-lg-table-cell">{{ $apartment->square_meters}}</td>
+              <td class="d-none d-md-table-cell">{{ $apartment->address}}</td>
+              <td class="d-none d-md-table-cell">{{ $apartment->price_per_night}}</td>
               <td>
                 <div class="buttons d-flex">
                   <!-- Show -->
@@ -62,9 +61,9 @@
       
                   <!-- Edit -->
                   <a href="{{ route('apartment.edit', $apartment) }}">
-                  <button  class="btn btn-primary">
-                      <i class="bi bi-pencil-square"></i>
-                  </button>
+                    <button  class="btn btn-primary">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
                   </a>
                   
                   <!-- delete -->
