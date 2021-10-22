@@ -113,9 +113,9 @@
                     @endif
                     
                     @foreach($sponsors as $sponsor)
-                    <div>
+                    <div class="{{$sponsor->name}}">
                         <a href="{{ route('payment.process', [$sponsor->id, $apartment->id]) }}">
-                            <span>{{$sponsor->name}} - </span>
+                            <span >{{$sponsor->name}} - </span>
                             <span>€: {{$sponsor->price}} - </span>
                             <span>{{$sponsor->duration}} ore</span>
                         </a>      
