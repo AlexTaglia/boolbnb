@@ -27,10 +27,12 @@
         {{-- mettere i margini --}}
         @foreach ($visibleApartments as $apartment)
 
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 card card-home" >
-        
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2 card-home" >
           <a href="{{ route('apartment.show', $apartment->apartment_id)}}">
-            <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
+            <div class="cont-card-home">
+              
+              <img  src="{{ asset('storage/' . $apartment->img) }}" alt="{{ $apartment->title}}">
+            </div>
           </a>
       
         </div>
@@ -149,7 +151,15 @@
     border-radius:100px;
     
   }
-  
+  .cont-card-home{
+    height: 150px;
+    margin-bottom: 30px;
+  }
+  .cont-card-home img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
   .card-image{
     height: 200px;
   }
@@ -160,10 +170,7 @@
   .card-body{
     height: 250px;
   }
-  .card-home{
-    height:180px;
-    
-  }
+ 
   input[type="text"]{
  
   background-color : white; 
